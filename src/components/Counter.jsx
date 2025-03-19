@@ -26,7 +26,7 @@ export class Counter extends React.Component {
     render() {
         return React.createElement(
             'div',
-            {className: 'counterWrapper'},
+            {className: 'counter-wrapper'},
 
             React.createElement(
                 'h2',
