@@ -5,7 +5,7 @@ export default function SearchForm({initialSearch, searchHandler}) {
 
     const [inputValue, setInputValue] = useState(initialSearch);
 
-    const submitHandler = async (event) => {
+    const submitHandler = (event) => {
         event.preventDefault();
         searchHandler(inputValue);
     }
