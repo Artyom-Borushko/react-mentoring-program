@@ -1,0 +1,40 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`MovieCard component tests renders MovieCard component 1`] = `
+<div>
+  <div
+    class="movie-card"
+  >
+    <div>
+      <img
+        alt="expand options"
+        aria-label="expand options"
+        class="movie-expand-options-icon"
+        src="images/options-selector/threeDotsExpandOptionsIcon.png"
+      />
+    </div>
+    <img
+      alt="movie card"
+      aria-label="movie card"
+      src="/images/movies-list/killBillVol2.png"
+    />
+    <div
+      class="movie-name-year-wrapper"
+    >
+      <p>
+        Kill1 Bill: Vol 1
+      </p>
+      <p
+        class="movie-release-year"
+      >
+        1995
+      </p>
+    </div>
+    <p
+      class="movie-genres"
+    >
+      comedy, crime, oscar
+    </p>
+  </div>
+</div>
+`;
