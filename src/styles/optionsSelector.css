@@ -1,0 +1,40 @@
+
+.movie-expand-options-icon {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    cursor: pointer;
+}
+
+.dropdown {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    background-color: rgba(35, 35, 35, 1);
+    border-radius: 4px;
+    width: 60%;
+    z-index: 10;
+    text-transform: capitalize;
+    backdrop-filter: blur(30px);
+    box-shadow: 0 10px 50px 0 #0000001A;
+    display: flex;
+    flex-direction: column;
+}
+
+.dropdown-option {
+    padding: 10px 30px 10px 30px;
+    cursor: pointer;
+    color: #FFFFFF;
+}
+
+.dropdown-option:hover {
+    background: #F65261;
+}
+
+.close-dropdown {
+    cursor: pointer;
+    max-width: 15px;
+    max-height: 15px;
+    align-self: flex-end;
+    padding: 7px;
+}
