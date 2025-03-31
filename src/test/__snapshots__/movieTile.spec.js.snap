@@ -1,0 +1,214 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`MovieTile component tests renders MovieTile component 1`] = `
+<div>
+  <div
+    class="movie-tile"
+  >
+    <div
+      class="movie-card"
+    >
+      <div>
+        <img
+          alt="expand options"
+          aria-label="expand options"
+          class="movie-expand-options-icon"
+          src="images/options-selector/threeDotsExpandOptionsIcon.png"
+        />
+      </div>
+      <img
+        alt="movie card"
+        aria-label="movie card"
+        src="/images/movies-list/pulpFiction.png"
+      />
+      <div
+        class="movie-name-year-wrapper"
+      >
+        <p>
+          Pulp Fiction
+        </p>
+        <p
+          class="movie-release-year"
+        >
+          2004
+        </p>
+      </div>
+      <p
+        class="movie-genres"
+      >
+        action, crime
+      </p>
+    </div>
+    <div
+      class="movie-card"
+    >
+      <div>
+        <img
+          alt="expand options"
+          aria-label="expand options"
+          class="movie-expand-options-icon"
+          src="images/options-selector/threeDotsExpandOptionsIcon.png"
+        />
+      </div>
+      <img
+        alt="movie card"
+        aria-label="movie card"
+        src="/images/movies-list/bohemianRhapsody.png"
+      />
+      <div
+        class="movie-name-year-wrapper"
+      >
+        <p>
+          Bohemian Rhapsody
+        </p>
+        <p
+          class="movie-release-year"
+        >
+          2003
+        </p>
+      </div>
+      <p
+        class="movie-genres"
+      >
+        documentary, drama
+      </p>
+    </div>
+    <div
+      class="movie-card"
+    >
+      <div>
+        <img
+          alt="expand options"
+          aria-label="expand options"
+          class="movie-expand-options-icon"
+          src="images/options-selector/threeDotsExpandOptionsIcon.png"
+        />
+      </div>
+      <img
+        alt="movie card"
+        aria-label="movie card"
+        src="/images/movies-list/killBillVol2.png"
+      />
+      <div
+        class="movie-name-year-wrapper"
+      >
+        <p>
+          Kill Bill: Vol 2
+        </p>
+        <p
+          class="movie-release-year"
+        >
+          1994
+        </p>
+      </div>
+      <p
+        class="movie-genres"
+      >
+        comedy, crime, oscar
+      </p>
+    </div>
+    <div
+      class="movie-card"
+    >
+      <div>
+        <img
+          alt="expand options"
+          aria-label="expand options"
+          class="movie-expand-options-icon"
+          src="images/options-selector/threeDotsExpandOptionsIcon.png"
+        />
+      </div>
+      <img
+        alt="movie card"
+        aria-label="movie card"
+        src="/images/movies-list/avengersWarOfInfinity.png"
+      />
+      <div
+        class="movie-name-year-wrapper"
+      >
+        <p>
+          Avengers: War of Infinity
+        </p>
+        <p
+          class="movie-release-year"
+        >
+          2004
+        </p>
+      </div>
+      <p
+        class="movie-genres"
+      >
+        action, adventure
+      </p>
+    </div>
+    <div
+      class="movie-card"
+    >
+      <div>
+        <img
+          alt="expand options"
+          aria-label="expand options"
+          class="movie-expand-options-icon"
+          src="images/options-selector/threeDotsExpandOptionsIcon.png"
+        />
+      </div>
+      <img
+        alt="movie card"
+        aria-label="movie card"
+        src="/images/movies-list/inception.png"
+      />
+      <div
+        class="movie-name-year-wrapper"
+      >
+        <p>
+          Inception
+        </p>
+        <p
+          class="movie-release-year"
+        >
+          2003
+        </p>
+      </div>
+      <p
+        class="movie-genres"
+      >
+        action, adventure, horror
+      </p>
+    </div>
+    <div
+      class="movie-card"
+    >
+      <div>
+        <img
+          alt="expand options"
+          aria-label="expand options"
+          class="movie-expand-options-icon"
+          src="images/options-selector/threeDotsExpandOptionsIcon.png"
+        />
+      </div>
+      <img
+        alt="movie card"
+        aria-label="movie card"
+        src="/images/movies-list/reservoirDogs.png"
+      />
+      <div
+        class="movie-name-year-wrapper"
+      >
+        <p>
+          Reservoir dogs
+        </p>
+        <p
+          class="movie-release-year"
+        >
+          1994
+        </p>
+      </div>
+      <p
+        class="movie-genres"
+      >
+        crime, oscar
+      </p>
+    </div>
+  </div>
+</div>
+`;
