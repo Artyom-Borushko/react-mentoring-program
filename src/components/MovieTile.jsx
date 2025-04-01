@@ -7,11 +7,8 @@ export default function MovieTile({movies, clickHandler}) {
         <div className={'movie-tile'}>
             {movies.map((movie) => (
                 <MovieCard
-                    title={movie.title}
-                    releaseYear={movie.releaseYear}
-                    relevantGenres={movie.relevantGenres}
-                    src={movie.src}
                     clickHandler={clickHandler}
+                    movie={movie}
                     key={movie.id}
                 />
             ))}

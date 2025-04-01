@@ -16,24 +16,24 @@ exports[`MovieCard component tests renders MovieCard component 1`] = `
     <img
       alt="movie card"
       aria-label="movie card"
-      src="/images/movies-list/killBillVol2.png"
+      src="/images/movies-list/pulpFiction.png"
     />
     <div
       class="movie-name-year-wrapper"
     >
       <p>
-        Kill1 Bill: Vol 1
+        Pulp Fiction
       </p>
       <p
         class="movie-release-year"
       >
-        1995
+        2004
       </p>
     </div>
     <p
       class="movie-genres"
     >
-      comedy, crime, oscar
+      action, crime
     </p>
   </div>
 </div>

@@ -2,7 +2,7 @@ import '../styles/movieCard.css';
 import OptionsSelector from "./OptionsSelector";
 import {movieDropdownOptions} from "../data/dropdownsOptions";
 
-export default function MovieCard({title, releaseYear, relevantGenres, clickHandler, src}) {
+export default function MovieCard({movie, clickHandler}) {
 
     const handleDropdownSelection = (event) => {
         console.log('dropdown elements selected: ',
@@ -19,16 +19,16 @@ export default function MovieCard({title, releaseYear, relevantGenres, clickHand
             />
 
             <img
-                src={src}
+                src={movie.src}
                 alt='movie card'
                 aria-label={'movie card'}
-                onClick={clickHandler}
+                onClick={() => clickHandler(movie)}
             />
             <div className={'movie-name-year-wrapper'}>
-                <p>{title}</p>
-                <p className={'movie-release-year'}>{releaseYear}</p>
+                <p>{movie.title}</p>
+                <p className={'movie-release-year'}>{movie.releaseYear}</p>
             </div>
-            <p className={'movie-genres'}>{relevantGenres.join(', ')}</p>
+            <p className={'movie-genres'}>{movie.relevantGenres.join(', ')}</p>
         </div>
     );
 }

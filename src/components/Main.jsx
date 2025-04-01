@@ -6,7 +6,7 @@ import MovieTile from "./MovieTile";
 import {listOfMoviesMock} from "../data/moviesListMock";
 import MoviesCounter from "./MoviesCounter";
 
-export default function Main() {
+export default function Main({onMovieSelect}) {
 
     const [selectedGenre, setSelectedGenre] = useState('horror');
     const [movies, setMovies] = useState(listOfMoviesMock);
@@ -15,10 +15,6 @@ export default function Main() {
         console.log('the following genre is clicked: ', selectedGenre);
         setSelectedGenre(selectedGenre);
     };
-
-    const onMovieClick = (clickedMovie) => {
-        console.log('movie is clicked: ', clickedMovie);
-    }
 
     return (
         <div className={'main-content-wrapper'}>
@@ -34,7 +30,7 @@ export default function Main() {
 
             <MovieTile
                 movies={movies}
-                clickHandler={onMovieClick}>
+                clickHandler={onMovieSelect}>
             </MovieTile>
         </div>
     );

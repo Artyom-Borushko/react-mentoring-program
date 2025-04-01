@@ -1,5 +1,6 @@
 import { fn } from '@storybook/test';
 import MovieCard from '../components/MovieCard';
+import {listOfMoviesMock} from "../data/moviesListMock";
 
 export default {
     component: MovieCard,
@@ -7,10 +8,7 @@ export default {
 
 export const WithClickableImage = {
     args: {
-        title: 'Kill Bill: Vol 2',
-        releaseYear: '1994',
-        relevantGenres: ['comedy', 'crime', 'oscar'],
-        src: '/images/movies-list/killBillVol2.png',
+        movie: listOfMoviesMock[0],
         clickHandler: fn()
     }
 };
