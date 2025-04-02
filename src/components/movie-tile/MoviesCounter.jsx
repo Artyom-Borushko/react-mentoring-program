@@ -1,4 +1,4 @@
-import '../styles/moviesCounter.css';
+import './moviesCounter.css';
 
 export default function MoviesCounter({movies}) {
 

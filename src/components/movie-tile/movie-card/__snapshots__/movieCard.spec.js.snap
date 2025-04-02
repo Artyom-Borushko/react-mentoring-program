@@ -9,7 +9,7 @@ exports[`MovieCard component tests renders MovieCard component 1`] = `
       <img
         alt="expand options"
         aria-label="expand options"
-        class="movie-expand-options-icon"
+        class="movie-expand-options-icon movie options"
         src="images/options-selector/threeDotsExpandOptionsIcon.png"
       />
     </div>

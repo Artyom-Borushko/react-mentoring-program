@@ -1,4 +1,4 @@
-import '../../styles/movieDetails.css';
+import './movieDetails.css';
 
 export default function MovieDetails({movie}) {
 

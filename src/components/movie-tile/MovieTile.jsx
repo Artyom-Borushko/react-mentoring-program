@@ -1,5 +1,5 @@
-import MovieCard from "./MovieCard";
-import '../styles/movieTile.css';
+import MovieCard from "./movie-card/MovieCard";
+import './movieTile.css';
 
 export default function MovieTile({movies, clickHandler}) {
 

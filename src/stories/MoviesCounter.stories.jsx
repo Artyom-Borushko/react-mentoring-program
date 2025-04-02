@@ -1,4 +1,4 @@
-import MoviesCounter from '../components/MoviesCounter';
+import MoviesCounter from '../components/movie-tile/MoviesCounter';
 import {listOfMoviesMock} from "../data/moviesListMock";
 
 export default {

@@ -1,6 +1,6 @@
-import '../styles/movieCard.css';
-import OptionsSelector from "./OptionsSelector";
-import {movieDropdownOptions} from "../data/dropdownsOptions";
+import './movieCard.css';
+import OptionsSelector from "../../shared/OptionsSelector";
+import {movieDropdownOptions} from "../../../data/dropdownsOptions";
 
 export default function MovieCard({movie, clickHandler}) {
 
@@ -14,8 +14,10 @@ export default function MovieCard({movie, clickHandler}) {
     return (
         <div className={'movie-card'}>
             <OptionsSelector
-                movieDropdownOptions={movieDropdownOptions}
+                dropdownOptions={movieDropdownOptions}
                 onDropdownSelection={handleDropdownSelection}
+                controlImageSrc={'images/options-selector/threeDotsExpandOptionsIcon.png'}
+                controlSource={'movie options'}
             />
 
             <img

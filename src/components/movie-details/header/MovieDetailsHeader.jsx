@@ -1,4 +1,4 @@
-import '../../../styles/movieDetailsHeader.css';
+import './movieDetailsHeader.css';
 
 export default function MovieDetailsHeader({searchAllHandler}) {
 

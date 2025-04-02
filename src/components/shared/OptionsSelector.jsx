@@ -1,12 +1,17 @@
 import React, { useState, useRef, useEffect } from "react";
-import '../styles/optionsSelector.css';
+import './optionsSelector.css';
 
-export default function OptionsSelector({movieDropdownOptions, onDropdownSelection}) {
+export default function OptionsSelector({dropdownOptions, onDropdownSelection, controlImageSrc, controlSource = ''}) {
     const [isOptionsDropdownVisible, setOptionsDropdownVisible] = useState(false);
     const dropdownRef = useRef(null);
 
     const toggleDropdown = () => {
         setOptionsDropdownVisible(!isOptionsDropdownVisible);
+    };
+
+    const handleDropdownSelect = (event) => {
+        toggleDropdown();
+        onDropdownSelection(event);
     };
 
     useEffect(() => {
@@ -26,9 +31,9 @@ export default function OptionsSelector({movieDropdownOptions, onDropdownSelecti
     return (
         <div ref={dropdownRef}>
             <img
-                src={'images/options-selector/threeDotsExpandOptionsIcon.png'}
+                src={controlImageSrc}
                 alt='expand options'
-                className={'movie-expand-options-icon'}
+                className={`movie-expand-options-icon ${controlSource}`}
                 aria-label={'expand options'}
                 onClick={toggleDropdown}
             />
@@ -42,12 +47,12 @@ export default function OptionsSelector({movieDropdownOptions, onDropdownSelecti
                         aria-label={'close dropdown'}
                         onClick={toggleDropdown}
                     />
-                    {movieDropdownOptions.map((dropdownOption, index) => {
+                    {dropdownOptions.map((dropdownOption, index) => {
                         return (
                             <div
                                 key={index}
                                 className={'dropdown-option'}
-                                onClick={onDropdownSelection}
+                                onClick={handleDropdownSelect}
                             >
                                 {dropdownOption}
                             </div>

@@ -12,7 +12,7 @@ exports[`MovieTile component tests renders MovieTile component 1`] = `
         <img
           alt="expand options"
           aria-label="expand options"
-          class="movie-expand-options-icon"
+          class="movie-expand-options-icon movie options"
           src="images/options-selector/threeDotsExpandOptionsIcon.png"
         />
       </div>
@@ -46,7 +46,7 @@ exports[`MovieTile component tests renders MovieTile component 1`] = `
         <img
           alt="expand options"
           aria-label="expand options"
-          class="movie-expand-options-icon"
+          class="movie-expand-options-icon movie options"
           src="images/options-selector/threeDotsExpandOptionsIcon.png"
         />
       </div>
@@ -80,7 +80,7 @@ exports[`MovieTile component tests renders MovieTile component 1`] = `
         <img
           alt="expand options"
           aria-label="expand options"
-          class="movie-expand-options-icon"
+          class="movie-expand-options-icon movie options"
           src="images/options-selector/threeDotsExpandOptionsIcon.png"
         />
       </div>
@@ -114,7 +114,7 @@ exports[`MovieTile component tests renders MovieTile component 1`] = `
         <img
           alt="expand options"
           aria-label="expand options"
-          class="movie-expand-options-icon"
+          class="movie-expand-options-icon movie options"
           src="images/options-selector/threeDotsExpandOptionsIcon.png"
         />
       </div>
@@ -148,7 +148,7 @@ exports[`MovieTile component tests renders MovieTile component 1`] = `
         <img
           alt="expand options"
           aria-label="expand options"
-          class="movie-expand-options-icon"
+          class="movie-expand-options-icon movie options"
           src="images/options-selector/threeDotsExpandOptionsIcon.png"
         />
       </div>
@@ -182,7 +182,7 @@ exports[`MovieTile component tests renders MovieTile component 1`] = `
         <img
           alt="expand options"
           aria-label="expand options"
-          class="movie-expand-options-icon"
+          class="movie-expand-options-icon movie options"
           src="images/options-selector/threeDotsExpandOptionsIcon.png"
         />
       </div>

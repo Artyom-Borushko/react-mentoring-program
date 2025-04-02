@@ -1,5 +1,5 @@
 import { fn } from '@storybook/test';
-import GenreSelect from '../components/GenreSelect';
+import GenreSelect from '../components/movie-tile-sort/sorters/genre-sorter/GenreSelect';
 import {listOfGenres} from "../data/movieGenres";
 
 export default {
@@ -10,7 +10,7 @@ export const HorrorGenreSelect = {
     args: {
         selectedGenre: 'horror',
         listOfGenres,
-        selectHandler: fn(),
+        genreSelectHandler: fn(),
     }
 };
 
@@ -18,6 +18,6 @@ export const DocumentaryGenreSelect = {
     args: {
         selectedGenre: 'documentary',
         listOfGenres,
-        selectHandler: fn(),
+        genreSelectHandler: fn(),
     }
 };

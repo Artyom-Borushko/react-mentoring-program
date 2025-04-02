@@ -1,8 +1,8 @@
 import {render} from "@testing-library/react";
 import React from "react";
 import '@testing-library/jest-dom';
-import MoviesCounter from "../components/MoviesCounter";
-import {listOfMoviesMock} from "../data/moviesListMock";
+import MoviesCounter from "./MoviesCounter";
+import {listOfMoviesMock} from "../../data/moviesListMock";
 
 describe("MoviesCounter component tests", () => {
 

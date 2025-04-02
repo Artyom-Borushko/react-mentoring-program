@@ -1,5 +1,5 @@
 import { fn } from '@storybook/test';
-import MovieCard from '../components/MovieCard';
+import MovieCard from '../components/movie-tile/movie-card/MovieCard';
 import {listOfMoviesMock} from "../data/moviesListMock";
 
 export default {

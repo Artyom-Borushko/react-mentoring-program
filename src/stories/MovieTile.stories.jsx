@@ -1,4 +1,4 @@
-import MovieTile from '../components/MovieTile';
+import MovieTile from '../components/movie-tile/MovieTile';
 import {listOfMoviesMock} from "../data/moviesListMock";
 import {fn} from "@storybook/test";
 
