@@ -1,29 +1,36 @@
-import {listOfGenres} from "../data/movieGenres";
-import GenreSelect from "./GenreSelect";
 import '../styles/main.css';
 import {useState} from "react";
-import MovieTile from "./MovieTile";
+import MovieTile from "./movie-tile/MovieTile";
 import {listOfMoviesMock} from "../data/moviesListMock";
-import MoviesCounter from "./MoviesCounter";
+import MoviesCounter from "./movie-tile/MoviesCounter";
+import MoviesSort from "./movie-tile-sort/MoviesSort";
+import {moviesSort} from "../utilities/sort";
 
 export default function Main({onMovieSelect}) {
 
     const [selectedGenre, setSelectedGenre] = useState('horror');
+    const [selectedSortOption, setSelectedSortOption] = useState('Select sorting');
     const [movies, setMovies] = useState(listOfMoviesMock);
 
-    const onSelect = (selectedGenre) => {
-        console.log('the following genre is clicked: ', selectedGenre);
+    const genreSelectHandler = (selectedGenre) => {
         setSelectedGenre(selectedGenre);
+    };
+
+    const sortControlHandler = (event) => {
+        setSelectedSortOption(event.target.innerText.trim().toLowerCase());
+        const sortedMovies = moviesSort(movies, event.target.innerText);
+        setMovies(sortedMovies);
     };
 
     return (
         <div className={'main-content-wrapper'}>
-            <GenreSelect
-                listOfGenres={listOfGenres}
+            <MoviesSort
                 selectedGenre={selectedGenre}
-                selectHandler={onSelect}
+                genreSelectHandler={genreSelectHandler}
+                selectedSortOption={selectedSortOption}
+                sortControlHandler={sortControlHandler}
             >
-            </GenreSelect>
+            </MoviesSort>
 
             <MoviesCounter movies={movies}>
             </MoviesCounter>
