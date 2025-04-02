@@ -1,0 +1,17 @@
+
+.sort-control-wrapper {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    letter-spacing: 0.90px;
+    text-transform: uppercase;
+}
+
+.sort-control-wrapper > label {
+    opacity: 0.6;
+    padding-right: 30px;
+}
+
+.sort-control-wrapper > p {
+    padding-right: 30px;
+}
