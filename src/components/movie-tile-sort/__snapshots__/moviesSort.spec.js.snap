@@ -1,0 +1,62 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`MoviesSort component tests renders MoviesSort component 1`] = `
+<div>
+  <div
+    class="movies-sort-wrapper"
+  >
+    <div
+      class="genre-selection-wrapper"
+    >
+      <button
+        class="genre-button "
+        name="all"
+      >
+        all
+      </button>
+      <button
+        class="genre-button "
+        name="documentary"
+      >
+        documentary
+      </button>
+      <button
+        class="genre-button selected"
+        name="comedy"
+      >
+        comedy
+      </button>
+      <button
+        class="genre-button "
+        name="horror"
+      >
+        horror
+      </button>
+      <button
+        class="genre-button "
+        name="crime"
+      >
+        crime
+      </button>
+    </div>
+    <div
+      class="sort-control-wrapper"
+    >
+      <label>
+        Sort by
+      </label>
+      <p>
+        title
+      </p>
+      <div>
+        <img
+          alt="expand options"
+          aria-label="expand options"
+          class="movie-expand-options-icon movies-sort"
+          src="images/icons/redTriangleDown.png"
+        />
+      </div>
+    </div>
+  </div>
+</div>
+`;

@@ -1,8 +1,8 @@
 import {render, screen} from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import React from "react";
-import GenreSelect from "../components/GenreSelect";
-import {listOfGenres} from "../data/movieGenres";
+import GenreSelect from "./GenreSelect";
+import {listOfGenres} from "../../../../data/movieGenres";
 import '@testing-library/jest-dom';
 
 describe("GenreSelect component tests", () => {
@@ -34,7 +34,7 @@ describe("GenreSelect component tests", () => {
         render(<GenreSelect
             listOfGenres={listOfGenres}
             selectedGenre={'comedy'}
-            selectHandler={mockClickHandler}/>
+            genreSelectHandler={mockClickHandler}/>
         );
 
         await userEvent.click(screen.getByRole('button', {name: 'all'}));

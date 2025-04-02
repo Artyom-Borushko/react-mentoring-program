@@ -1,5 +1,5 @@
-import SearchForm from "./SearchForm";
-import '../styles/header.css';
+import SearchForm from "../search/SearchForm";
+import './header.css';
 
 export default function Header() {
 

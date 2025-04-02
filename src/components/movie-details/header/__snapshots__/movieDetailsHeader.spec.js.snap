@@ -1,0 +1,21 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`MovieDetailsHeader component tests renders MovieDetailsHeader component 1`] = `
+<div>
+  <div
+    class="movie-details-header"
+  >
+    <p
+      class="movie-details-header-text"
+    >
+      netflixroulette
+    </p>
+    <img
+      alt="search icon"
+      aria-label="search icon"
+      class="movie-details-search-icon"
+      src="/images/buttons/searchButton.png"
+    />
+  </div>
+</div>
+`;

@@ -1,0 +1,58 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`MovieDetails component tests renders MovieDetails component 1`] = `
+<div>
+  <div
+    class="movie-details"
+  >
+    <img
+      alt="movie details"
+      aria-label="movie details"
+      class="movie-details-image"
+      src="/images/movies-list/pulpFiction.png"
+    />
+    <div
+      class="movie-details-information"
+    >
+      <div
+        class="movie-details-title-rating"
+      >
+        <p
+          class="movie-details-title"
+        >
+          Pulp Fiction
+        </p>
+        <p
+          class="movie-details-rating"
+        >
+          9.2
+        </p>
+      </div>
+      <p
+        class="movie-details-genres"
+      >
+        action, crime
+      </p>
+      <div
+        class="movie-details-year-duration"
+      >
+        <span
+          class="movie-details-year"
+        >
+          2004
+        </span>
+        <span
+          class="movie-details-duration"
+        >
+          2h 22min
+        </span>
+      </div>
+      <p
+        class="movie-details-description"
+      >
+        Lorem ipsum dolor sit amet. Eum autem quod aut dolorem voluptatum nam dolores sunt. Ea velit placeat ea corporis illo rem quod nulla. Et maxime placeat ut vero placeat et harum sequi. A Quis expedita id dolores sint id repellendus atque sit suscipit obcaecati vel quia galisum quo cumque internos!
+      </p>
+    </div>
+  </div>
+</div>
+`;
