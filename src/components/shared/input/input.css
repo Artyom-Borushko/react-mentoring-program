@@ -1,0 +1,16 @@
+
+.input-field {
+    display: flex;
+    flex-direction: column;
+    flex: 0 1 40%;
+    padding: 10px;
+}
+
+.input-field.textarea {
+    flex: 0 1 100%;
+    margin-bottom: 20px;
+}
+
+.input-field .textarea {
+    min-height: 100px
+}

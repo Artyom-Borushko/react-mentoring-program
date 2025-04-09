@@ -41,7 +41,7 @@ export default function OptionsSelector({dropdownOptions, onDropdownSelection, c
             {isOptionsDropdownVisible && (
                 <div className="dropdown">
                     <img
-                        src="/images/options-selector/whiteCrossSign.png"
+                        src="/images/icons/whiteCrossSign.png"
                         alt="white cross"
                         className={'close-dropdown'}
                         aria-label={'close dropdown'}

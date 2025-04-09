@@ -1,0 +1,22 @@
+
+.button.submit {
+    background: rgba(246, 82, 97, 1);
+    color: rgba(255, 255, 255, 1);
+    text-transform: uppercase;
+    font-size: 1em;
+    font-weight: 500;
+    border: none;
+    border-radius: 4px;
+    padding: 0 40px 0 40px;
+    cursor: pointer;
+    height: 57px;
+    text-align: center;
+}
+
+.button.submit:active {
+    transform: scale(0.98);
+}
+
+.button.dropdown-opener {
+    width: 100px;
+}

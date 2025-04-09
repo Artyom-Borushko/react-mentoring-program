@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Button component tests renders Button component with children passed to it 1`] = `
+<div>
+  <button
+    class="button undefined"
+  >
+    test text
+  </button>
+</div>
+`;

@@ -1,10 +1,13 @@
 import '../styles/main.css';
-import {useState} from "react";
-import MovieTile from "./movie-tile/MovieTile";
+import React, {useState} from "react";
 import {listOfMoviesMock} from "../data/moviesListMock";
 import MoviesCounter from "./movie-tile/MoviesCounter";
 import MoviesSort from "./movie-tile-sort/MoviesSort";
 import {moviesSort} from "../utilities/sort";
+
+const MovieTile = React.lazy(
+    () => import('./movie-tile/MovieTile')
+);
 
 export default function Main({onMovieSelect}) {
 
@@ -35,10 +38,12 @@ export default function Main({onMovieSelect}) {
             <MoviesCounter movies={movies}>
             </MoviesCounter>
 
-            <MovieTile
-                movies={movies}
-                clickHandler={onMovieSelect}>
-            </MovieTile>
+            <React.Suspense fallback={<h3>Loading movies... Please wait</h3>}>
+                <MovieTile
+                    movies={movies}
+                    clickHandler={onMovieSelect}>
+                </MovieTile>
+            </React.Suspense>
         </div>
     );
 }

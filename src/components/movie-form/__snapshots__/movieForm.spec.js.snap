@@ -1,0 +1,269 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`MovieForm component tests renders empty MovieForm component 1`] = `
+<div>
+  <form
+    class="movie-form"
+  >
+    <div
+      class="movie-form-content"
+    >
+      <div
+        class="input-field"
+      >
+        <label
+          for="movieTitle"
+        >
+          Title
+        </label>
+        <input
+          class="title"
+          id="movieTitle"
+          name="movieTitle"
+          type="text"
+          value=""
+        />
+      </div>
+      <div
+        class="input-field"
+      >
+        <label
+          for="movieReleaseDate"
+        >
+          Release date
+        </label>
+        <input
+          class="release date"
+          id="movieReleaseDate"
+          name="movieReleaseDate"
+          type="date"
+          value=""
+        />
+      </div>
+      <div
+        class="input-field"
+      >
+        <label
+          for="movieUrl"
+        >
+          Movie URL
+        </label>
+        <input
+          class="movie url"
+          id="movieUrl"
+          name="movieUrl"
+          type="text"
+          value=""
+        />
+      </div>
+      <div
+        class="input-field"
+      >
+        <label
+          for="movieRating"
+        >
+          Rating
+        </label>
+        <input
+          class="rating"
+          id="movieRating"
+          name="movieRating"
+          type="text"
+          value=""
+        />
+      </div>
+      <div
+        class="input-field"
+      >
+        <button
+          class="button dropdown-opener"
+          type="dropdown-opener"
+        >
+          Select Genre
+        </button>
+      </div>
+      <div
+        class="input-field"
+      >
+        <label
+          for="movieRuntime"
+        >
+          Runtime
+        </label>
+        <input
+          class="runtime"
+          id="movieRuntime"
+          name="movieRuntime"
+          type="text"
+          value=""
+        />
+      </div>
+      <div
+        class="input-field textarea"
+      >
+        <label
+          for="movieOverview"
+        >
+          Overview
+        </label>
+        <textarea
+          class="textarea"
+          id="movieOverview"
+          name="movieOverview"
+        />
+      </div>
+    </div>
+    <div
+      class="movie-form-confirmation-control"
+    >
+      <button
+        class="button submit"
+        type="submit"
+      >
+        Reset
+      </button>
+      <button
+        class="button submit"
+        type="submit"
+      >
+        Submit
+      </button>
+    </div>
+  </form>
+</div>
+`;
+
+exports[`MovieForm component tests renders empty MovieForm component with initial movie 1`] = `
+<div>
+  <form
+    class="movie-form"
+  >
+    <div
+      class="movie-form-content"
+    >
+      <div
+        class="input-field"
+      >
+        <label
+          for="movieTitle"
+        >
+          Title
+        </label>
+        <input
+          class="title"
+          id="movieTitle"
+          name="movieTitle"
+          type="text"
+          value="Pulp Fiction"
+        />
+      </div>
+      <div
+        class="input-field"
+      >
+        <label
+          for="movieReleaseDate"
+        >
+          Release date
+        </label>
+        <input
+          class="release date"
+          id="movieReleaseDate"
+          name="movieReleaseDate"
+          type="date"
+          value="1994-01-23"
+        />
+      </div>
+      <div
+        class="input-field"
+      >
+        <label
+          for="movieUrl"
+        >
+          Movie URL
+        </label>
+        <input
+          class="movie url"
+          id="movieUrl"
+          name="movieUrl"
+          type="text"
+          value="/images/movies-list/pulpFiction.png"
+        />
+      </div>
+      <div
+        class="input-field"
+      >
+        <label
+          for="movieRating"
+        >
+          Rating
+        </label>
+        <input
+          class="rating"
+          id="movieRating"
+          name="movieRating"
+          type="text"
+          value="9.2"
+        />
+      </div>
+      <div
+        class="input-field"
+      >
+        <button
+          class="button dropdown-opener"
+          type="dropdown-opener"
+        >
+          Select Genre
+        </button>
+      </div>
+      <div
+        class="input-field"
+      >
+        <label
+          for="movieRuntime"
+        >
+          Runtime
+        </label>
+        <input
+          class="runtime"
+          id="movieRuntime"
+          name="movieRuntime"
+          type="text"
+          value="2h 22min"
+        />
+      </div>
+      <div
+        class="input-field textarea"
+      >
+        <label
+          for="movieOverview"
+        >
+          Overview
+        </label>
+        <textarea
+          class="textarea"
+          id="movieOverview"
+          name="movieOverview"
+        >
+          Lorem ipsum dolor sit amet. Eum autem quod aut dolorem voluptatum nam dolores sunt. Ea velit placeat ea corporis illo rem quod nulla. Et maxime placeat ut vero placeat et harum sequi. A Quis expedita id dolores sint id repellendus atque sit suscipit obcaecati vel quia galisum quo cumque internos!
+        </textarea>
+      </div>
+    </div>
+    <div
+      class="movie-form-confirmation-control"
+    >
+      <button
+        class="button submit"
+        type="submit"
+      >
+        Reset
+      </button>
+      <button
+        class="button submit"
+        type="submit"
+      >
+        Submit
+      </button>
+    </div>
+  </form>
+</div>
+`;
