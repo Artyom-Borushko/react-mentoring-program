@@ -1,5 +1,6 @@
 import './searchForm.css'
 import {useState} from "react";
+import Button from "../shared/button/Button";
 
 export default function SearchForm({initialSearch, searchHandler}) {
 
@@ -24,12 +25,9 @@ export default function SearchForm({initialSearch, searchHandler}) {
                 onChange={changeHandler}
             />
 
-            <button
-                type={'submit'}
-                className={'search-submit-button'}
-            >
+            <Button type={'submit'}>
                 Search
-            </button>
+            </Button>
     </form>
     );
 }
