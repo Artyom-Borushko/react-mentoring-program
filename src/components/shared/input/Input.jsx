@@ -27,7 +27,7 @@ export default function Input({labelText, id, type, initialValue = '', dropdownO
                             <input
                                 id={id}
                                 type={type}
-                                name="checkboxSelectUnique"
+                                name={id}
                                 defaultValue={option}
                                 ref={ref}
                             />
