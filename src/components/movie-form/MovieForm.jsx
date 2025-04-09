@@ -27,62 +27,66 @@ export default function MovieForm({initialMovie = {}, onSubmit}) {
             className={'movie-form'}
             onSubmit={handleFormSubmit}
         >
-            <Input
-                labelText={'Title'}
-                type={'text'}
-                id={'movieTitle'}
-                initialValue={initialMovie.title}
-                ref={titleRef}
-            ></Input>
-            <Input
-                labelText={'Release date'}
-                type={'date'}
-                id={'movieReleaseDate'}
-                initialValue={initialMovie.releaseDate}
-                ref={releaseDateRef}
-            ></Input>
-            <Input
-                labelText={'Movie URL'}
-                type={'text'}
-                id={'movieUrl'}
-                initialValue={initialMovie.src}
-                ref={urlRef}
-            ></Input>
-            <Input
-                labelText={'Rating'}
-                type={'text'}
-                id={'movieRating'}
-                initialValue={initialMovie.rating}
-                ref={ratingRef}
-            ></Input>
-            <Input
-                labelText={'Genre'}
-                type={'checkbox'}
-                id={'movieGenre'}
-                dropdownOptions={initialMovie.relevantGenres}
-                dropdownOpenerText={'Select Genre'}
-                ref={genreRef}
-            ></Input>
-            <Input
-                labelText={'Runtime'}
-                type={'text'}
-                id={'movieRuntime'}
-                initialValue={initialMovie.duration}
-                ref={runtimeRef}
-            ></Input>
-            <Input
-                labelText={'Overview'}
-                type={'textarea'}
-                id={'movieOverview'}
-                initialValue={initialMovie.description}
-                ref={overviewRef}
-            ></Input>
-            <Button type={'submit'}>
-                Reset
-            </Button>
-            <Button type={'submit'}>
-                Submit
-            </Button>
+            <div className={'movie-form-content'}>
+                <Input
+                    labelText={'Title'}
+                    type={'text'}
+                    id={'movieTitle'}
+                    initialValue={initialMovie.title}
+                    ref={titleRef}
+                ></Input>
+                <Input
+                    labelText={'Release date'}
+                    type={'date'}
+                    id={'movieReleaseDate'}
+                    initialValue={initialMovie.releaseDate}
+                    ref={releaseDateRef}
+                ></Input>
+                <Input
+                    labelText={'Movie URL'}
+                    type={'text'}
+                    id={'movieUrl'}
+                    initialValue={initialMovie.src}
+                    ref={urlRef}
+                ></Input>
+                <Input
+                    labelText={'Rating'}
+                    type={'text'}
+                    id={'movieRating'}
+                    initialValue={initialMovie.rating}
+                    ref={ratingRef}
+                ></Input>
+                <Input
+                    labelText={'Genre'}
+                    type={'checkbox'}
+                    id={'movieGenre'}
+                    dropdownOptions={initialMovie.relevantGenres}
+                    dropdownOpenerText={'Select Genre'}
+                    ref={genreRef}
+                ></Input>
+                <Input
+                    labelText={'Runtime'}
+                    type={'text'}
+                    id={'movieRuntime'}
+                    initialValue={initialMovie.duration}
+                    ref={runtimeRef}
+                ></Input>
+                <Input
+                    labelText={'Overview'}
+                    type={'textarea'}
+                    id={'movieOverview'}
+                    initialValue={initialMovie.description}
+                    ref={overviewRef}
+                ></Input>
+            </div>
+            <div className={'movie-form-confirmation-control'}>
+                <Button type={'submit'}>
+                    Reset
+                </Button>
+                <Button type={'submit'}>
+                    Submit
+                </Button>
+            </div>
         </form>
     )
 }

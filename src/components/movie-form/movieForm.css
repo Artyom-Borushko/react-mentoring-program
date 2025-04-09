@@ -1,7 +1,20 @@
 
 .movie-form {
     display: flex;
+    flex-direction: column;
+}
+
+.movie-form-content {
+    display: flex;
     align-items: flex-start;
     justify-content: space-evenly;
     flex-wrap: wrap;
+}
+
+.movie-form-confirmation-control {
+    align-self: flex-end;
+}
+
+.movie-form-confirmation-control button {
+    margin: 15px;
 }
