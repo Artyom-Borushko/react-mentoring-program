@@ -1,0 +1,24 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SortControl component tests renders SortControl component 1`] = `
+<div>
+  <div
+    class="sort-control-wrapper"
+  >
+    <label>
+      Sort by
+    </label>
+    <p>
+      Release date
+    </p>
+    <div>
+      <img
+        alt="expand options"
+        aria-label="expand options"
+        class="movie-expand-options-icon movies-sort"
+        src="images/icons/redTriangleDown.png"
+      />
+    </div>
+  </div>
+</div>
+`;

@@ -1,0 +1,15 @@
+
+.movie-details-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.movie-details-header-text {
+    color: #F65261;
+}
+
+.movie-details-search-icon {
+    cursor: pointer;
+}

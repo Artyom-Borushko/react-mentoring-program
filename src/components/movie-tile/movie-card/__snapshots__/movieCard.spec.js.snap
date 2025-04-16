@@ -1,0 +1,40 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`MovieCard component tests renders MovieCard component 1`] = `
+<div>
+  <div
+    class="movie-card"
+  >
+    <div>
+      <img
+        alt="expand options"
+        aria-label="expand options"
+        class="movie-expand-options-icon movie options"
+        src="images/options-selector/threeDotsExpandOptionsIcon.png"
+      />
+    </div>
+    <img
+      alt="movie card"
+      aria-label="movie card"
+      src="/images/movies-list/pulpFiction.png"
+    />
+    <div
+      class="movie-name-year-wrapper"
+    >
+      <p>
+        Pulp Fiction
+      </p>
+      <p
+        class="movie-release-year"
+      >
+        2004
+      </p>
+    </div>
+    <p
+      class="movie-genres"
+    >
+      action, crime
+    </p>
+  </div>
+</div>
+`;

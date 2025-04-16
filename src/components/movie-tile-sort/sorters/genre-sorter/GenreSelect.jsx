@@ -1,10 +1,10 @@
-import '../styles/genreSelect.css'
+import './genreSelect.css'
 
-export default function GenreSelect({selectedGenre, listOfGenres, selectHandler}) {
+export default function GenreSelect({selectedGenre, listOfGenres, genreSelectHandler}) {
 
     const clickHandler = (event) => {
         event.preventDefault();
-        selectHandler(event.target.name);
+        genreSelectHandler(event.target.name);
     }
 
     return (

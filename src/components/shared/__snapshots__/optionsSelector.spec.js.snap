@@ -1,0 +1,27 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`OptionsSelector component tests renders OptionsSelector component with three dots expand icon 1`] = `
+<div>
+  <div>
+    <img
+      alt="expand options"
+      aria-label="expand options"
+      class="movie-expand-options-icon "
+      src="images/options-selector/threeDotsExpandOptionsIcon.png"
+    />
+  </div>
+</div>
+`;
+
+exports[`OptionsSelector component tests renders OptionsSelector component with triangle down icon 1`] = `
+<div>
+  <div>
+    <img
+      alt="expand options"
+      aria-label="expand options"
+      class="movie-expand-options-icon "
+      src="images/icons/redTriangleDown.png"
+    />
+  </div>
+</div>
+`;
