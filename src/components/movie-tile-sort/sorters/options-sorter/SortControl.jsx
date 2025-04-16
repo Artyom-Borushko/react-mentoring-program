@@ -1,3 +1,4 @@
+import React from "react";
 import './sortControl.css';
 import OptionsSelector from "../../../shared/OptionsSelector";
 import {moviesSortDropdownOptions} from "../../../../data/dropdownsOptions";

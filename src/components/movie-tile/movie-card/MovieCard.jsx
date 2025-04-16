@@ -1,3 +1,4 @@
+import React from "react";
 import './movieCard.css';
 import OptionsSelector from "../../shared/OptionsSelector";
 import {movieDropdownOptions} from "../../../data/dropdownsOptions";

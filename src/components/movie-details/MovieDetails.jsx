@@ -1,3 +1,4 @@
+import React from "react";
 import './movieDetails.css';
 
 export default function MovieDetails({movie}) {

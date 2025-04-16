@@ -1,9 +1,9 @@
+import React, {useState} from "react";
 import './App.css';
 import {Counter} from "./components/Counter";
 import Header from "./components/header/Header";
 import './components/header/header.css';
 import Main from "./components/Main";
-import {useState} from "react";
 import MovieDetails from "./components/movie-details/MovieDetails";
 import MovieDetailsHeader from "./components/movie-details/header/MovieDetailsHeader";
 
