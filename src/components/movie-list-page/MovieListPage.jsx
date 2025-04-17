@@ -14,13 +14,14 @@ const MovieTile = React.lazy(
 
 export default function MovieListPage() {
 
+    const [searchInputValue, setSearchInputValue] = useState('');
     const [selectedSortOption, setSelectedSortOption] = useState('Select sorting');
     const [selectedGenre, setSelectedGenre] = useState('horror');
     const [movies, setMovies] = useState(listOfMoviesMock);
     const [movieSelected, setMovieSelected] = useState(undefined);
 
-    const onMovieSearch = (searchString) => {
-        console.log('search happened with searchString: ', searchString);
+    const onMovieSearch = () => {
+        console.log('search happened with: ', searchInputValue);
     }
 
     const onMovieSelect = (selectedMovie) => {
@@ -45,6 +46,8 @@ export default function MovieListPage() {
         <>
             {!movieSelected && <Header
                 onMovieSearch={onMovieSearch}
+                searchInputValue={searchInputValue}
+                setSearchInputValue={setSearchInputValue}
             >
             </Header>}
             {movieSelected && (

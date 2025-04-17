@@ -2,7 +2,7 @@ import React from "react";
 import SearchForm from "../search/SearchForm";
 import './header.css';
 
-export default function Header({onMovieSearch}) {
+export default function Header({onMovieSearch, searchInputValue, setSearchInputValue}) {
 
     return (
         <div className={'header'}>
@@ -16,6 +16,8 @@ export default function Header({onMovieSearch}) {
                 <SearchForm
                     searchHandler={onMovieSearch}
                     placeholder={'What do you want to watch?'}
+                    searchInputValue={searchInputValue}
+                    setSearchInputValue={setSearchInputValue}
                 >
                 </SearchForm>
             </div>
