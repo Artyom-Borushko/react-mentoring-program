@@ -3,9 +3,9 @@ import './searchForm.css'
 import {useState} from "react";
 import Button from "../shared/button/Button";
 
-export default function SearchForm({initialSearch, searchHandler}) {
+export default function SearchForm({searchHandler, placeholder}) {
 
-    const [inputValue, setInputValue] = useState(initialSearch);
+    const [inputValue, setInputValue] = useState('');
 
     const submitHandler = (event) => {
         event.preventDefault();
@@ -21,7 +21,7 @@ export default function SearchForm({initialSearch, searchHandler}) {
             <input
                 type={'text'}
                 className={'search-input'}
-                placeholder={'What do you want to watch?'}
+                placeholder={placeholder}
                 value={inputValue}
                 onChange={changeHandler}
             />

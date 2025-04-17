@@ -10,7 +10,7 @@ export default {
 
 export const InitialSearch = {
     args: {
-        initialSearch: 'test initial search',
+        placeholder: 'test initial placeholder',
         searchHandler: fn()
     }
 };
