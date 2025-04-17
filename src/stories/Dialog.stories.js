@@ -9,13 +9,6 @@ export default {
     component: Dialog,
 };
 
-export const Default = {
-    args: {
-        title: 'testTitle123',
-        onClose: fn()
-    }
-};
-
 export const AddEmptyMovie = {
     args: {
         title: 'Add Movie',

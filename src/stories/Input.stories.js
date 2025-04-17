@@ -1,4 +1,3 @@
-import { fn } from '@storybook/test';
 import Input from "../components/shared/input/Input";
 import {listOfMoviesMock} from "../data/moviesListMock";
 
