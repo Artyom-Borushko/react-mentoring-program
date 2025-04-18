@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, {useCallback, useRef, useState} from "react";
 import './movieListPage.css';
 import Header from "../header/Header";
 import MovieDetails from "../movie-details/MovieDetails";
@@ -7,6 +7,7 @@ import MoviesSort from "../movie-tile-sort/MoviesSort";
 import {moviesSort} from "../../utilities/sort";
 import {listOfMoviesMock} from "../../data/moviesListMock";
 import MoviesCounter from "../movie-tile/MoviesCounter";
+import {filter, searchSubstring} from "../../utilities/utilities";
 
 const MovieTile = React.lazy(
     () => import('../movie-tile/MovieTile')
@@ -19,21 +20,26 @@ export default function MovieListPage() {
     const [selectedGenre, setSelectedGenre] = useState('horror');
     const [movies, setMovies] = useState(listOfMoviesMock);
     const [movieSelected, setMovieSelected] = useState(undefined);
+    const moviesRef = useRef(listOfMoviesMock);
 
     const onMovieSearch = () => {
-        console.log('search happened with: ', searchInputValue);
+        const searchResult = searchSubstring(listOfMoviesMock, searchInputValue);
+        setMovies(searchResult);
+        moviesRef.current = searchResult;
     }
 
-    const onMovieSelect = (selectedMovie) => {
+    const onMovieSelect = useCallback((selectedMovie) => {
         setMovieSelected(selectedMovie);
-    }
+    }, []);
 
     const handleSearchAll = () => {
         setMovieSelected(undefined);
     }
 
     const genreSelectHandler = (selectedGenre) => {
+        const filteredMovies = filter(moviesRef.current, selectedGenre);
         setSelectedGenre(selectedGenre);
+        setMovies(filteredMovies);
     };
 
     const sortControlHandler = (event) => {
