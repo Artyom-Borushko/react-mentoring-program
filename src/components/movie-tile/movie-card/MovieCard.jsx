@@ -1,9 +1,9 @@
-import React from "react";
+import React, {memo} from "react";
 import './movieCard.css';
 import OptionsSelector from "../../shared/OptionsSelector";
 import {movieDropdownOptions} from "../../../data/dropdownsOptions";
 
-export default function MovieCard({movie, clickHandler}) {
+export const MovieCard = memo(function MovieCard({movie, clickHandler}) {
 
     const handleDropdownSelection = (event) => {
         console.log('dropdown elements selected: ',
@@ -34,4 +34,6 @@ export default function MovieCard({movie, clickHandler}) {
             <p className={'movie-genres'}>{movie.relevantGenres.join(', ')}</p>
         </div>
     );
-}
+})
+
+export default MovieCard;
