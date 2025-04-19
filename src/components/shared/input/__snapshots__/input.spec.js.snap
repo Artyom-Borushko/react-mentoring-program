@@ -1,0 +1,58 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Input component tests renders checkbox input 1`] = `
+<div>
+  <div
+    class="input-field"
+  >
+    <button
+      class="button dropdown-opener"
+      type="dropdown-opener"
+    >
+      Select Genre
+    </button>
+  </div>
+</div>
+`;
+
+exports[`Input component tests renders text input 1`] = `
+<div>
+  <div
+    class="input-field"
+  >
+    <label
+      for="movieTitle"
+    >
+      Title
+    </label>
+    <input
+      class="title"
+      id="movieTitle"
+      name="movieTitle"
+      type="text"
+      value="Kill Bill: Vol 2"
+    />
+  </div>
+</div>
+`;
+
+exports[`Input component tests renders textarea input 1`] = `
+<div>
+  <div
+    class="input-field textarea"
+  >
+    <label
+      for="movieOverview"
+    >
+      Overview
+    </label>
+    <textarea
+      class="textarea"
+      id="movieOverview"
+      name="movieOverview"
+    >
+      Lorem ipsum dolor sit amet. Eum autem quod aut dolorem voluptatum nam dolores sunt. Ea velit placeat ea corporis illo rem quod nulla. Et maxime placeat ut vero placeat et harum sequi. A Quis expedita id dolores sint id repellendus atque sit suscipit obcaecati vel quia galisum quo cumque internos!
+    </textarea>
+  </div>
+</div>
+`;
