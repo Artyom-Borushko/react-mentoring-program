@@ -39,12 +39,12 @@ describe("MovieForm component tests", () => {
         await userEvent.click(screen.getByRole('button', {name: 'Submit'}));
 
         expect(submittedForm).toEqual({
-            movieTitle: 'Pulp Fiction',
-            movieReleaseDate: '1994-01-23',
-            movieUrl: '/images/movies-list/pulpFiction.png',
-            movieRating: '9.2',
-            movieRuntime: '2h 22min',
-            movieOverview: 'Lorem ipsum dolor sit amet. Eum autem quod aut dolorem voluptatum nam dolores sunt. Ea velit placeat ea corporis illo rem quod nulla. Et maxime placeat ut vero placeat et harum sequi. A Quis expedita id dolores sint id repellendus atque sit suscipit obcaecati vel quia galisum quo cumque internos!'
+            movieTitle: 'Fifty Shades Freed',
+            movieReleaseDate: '2018-02-07',
+            movieUrl: '/images/movies-list/bohemianRhapsody.png',
+            movieRating: '6.1',
+            movieRuntime: '1h 46min',
+            movieOverview: 'Believing they have left behind shadowy figures from their past, newlyweds Christian and Ana fully embrace an inextricable connection and shared life of luxury. But just as she steps into her role as Mrs. Grey and he relaxes into an unfamiliar stability, new threats could jeopardize their happy ending before it even begins.'
         });
     });
 
@@ -59,11 +59,11 @@ describe("MovieForm component tests", () => {
         await userEvent.click(input);
         await userEvent.keyboard('23456')
 
-        expect(input.value).toBe('Pulp Fiction23456')
+        expect(input.value).toBe('Fifty Shades Freed23456')
 
         await userEvent.click(screen.getByRole('button', {name: 'Submit'}));
 
-        expect(submittedForm.movieTitle).toEqual('Pulp Fiction23456');
+        expect(submittedForm.movieTitle).toEqual('Fifty Shades Freed23456');
     });
 
     it("submits form with modified textarea", async () => {
@@ -92,10 +92,10 @@ describe("MovieForm component tests", () => {
         />);
 
         await userEvent.click(screen.getByRole('button', {name: 'Select Genre'}));
-        await userEvent.click(screen.getByDisplayValue('comedy'));
-        await userEvent.click(screen.getByDisplayValue('oscar'));
+        await userEvent.click(screen.getByDisplayValue('Adventure'));
+        await userEvent.click(screen.getByDisplayValue('Fantasy'));
         await userEvent.click(screen.getByRole('button', {name: 'Submit'}));
 
-        expect(submittedForm.movieGenre).toEqual(['comedy', 'oscar']);
+        expect(submittedForm.movieGenre).toEqual(['Fantasy', 'Adventure']);
     });
 });

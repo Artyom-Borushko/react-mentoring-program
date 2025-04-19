@@ -34,7 +34,7 @@ describe("MovieCard component tests", () => {
             clickHandler={mockClickHandler}
         />);
 
-        await userEvent.click(screen.getByText('2004'));
+        await userEvent.click(screen.getByText('2018'));
 
         expect(mockClickHandler).toHaveBeenCalledTimes(0);
     });

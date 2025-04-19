@@ -34,7 +34,7 @@ describe("MovieTile component tests", () => {
             clickHandler={mockClickHandler}
         />);
 
-        await userEvent.click(screen.getAllByText('1994')[0]);
+        await userEvent.click(screen.getAllByText('2018')[0]);
 
         expect(mockClickHandler).toHaveBeenCalledTimes(0);
     });

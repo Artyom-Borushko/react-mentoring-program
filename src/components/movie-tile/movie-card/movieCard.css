@@ -3,11 +3,14 @@
     margin-bottom: 50px;
     color: #FFFFFF;
     position: relative;
-    max-width: 320px;
+    width: 320px;
+    height: 520px;
 }
 
 .movie-card > img {
     padding-bottom: 15px;
+    width: 320px;
+    height: 470px;
 }
 
 .movie-name-year-wrapper {

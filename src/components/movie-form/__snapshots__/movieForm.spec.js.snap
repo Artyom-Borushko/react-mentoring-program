@@ -53,7 +53,7 @@ exports[`MovieForm component tests renders empty MovieForm component 1`] = `
           id="movieUrl"
           name="movieUrl"
           type="text"
-          value=""
+          value="/images/movies-list/bohemianRhapsody.png"
         />
       </div>
       <div
@@ -95,7 +95,7 @@ exports[`MovieForm component tests renders empty MovieForm component 1`] = `
           id="movieRuntime"
           name="movieRuntime"
           type="text"
-          value=""
+          value="N/A"
         />
       </div>
       <div
@@ -154,7 +154,7 @@ exports[`MovieForm component tests renders empty MovieForm component with initia
           id="movieTitle"
           name="movieTitle"
           type="text"
-          value="Pulp Fiction"
+          value="Fifty Shades Freed"
         />
       </div>
       <div
@@ -170,7 +170,7 @@ exports[`MovieForm component tests renders empty MovieForm component with initia
           id="movieReleaseDate"
           name="movieReleaseDate"
           type="date"
-          value="1994-01-23"
+          value="2018-02-07"
         />
       </div>
       <div
@@ -186,7 +186,7 @@ exports[`MovieForm component tests renders empty MovieForm component with initia
           id="movieUrl"
           name="movieUrl"
           type="text"
-          value="/images/movies-list/pulpFiction.png"
+          value="/images/movies-list/bohemianRhapsody.png"
         />
       </div>
       <div
@@ -202,7 +202,7 @@ exports[`MovieForm component tests renders empty MovieForm component with initia
           id="movieRating"
           name="movieRating"
           type="text"
-          value="9.2"
+          value="6.1"
         />
       </div>
       <div
@@ -228,7 +228,7 @@ exports[`MovieForm component tests renders empty MovieForm component with initia
           id="movieRuntime"
           name="movieRuntime"
           type="text"
-          value="2h 22min"
+          value="1h 46min"
         />
       </div>
       <div
@@ -244,7 +244,7 @@ exports[`MovieForm component tests renders empty MovieForm component with initia
           id="movieOverview"
           name="movieOverview"
         >
-          Lorem ipsum dolor sit amet. Eum autem quod aut dolorem voluptatum nam dolores sunt. Ea velit placeat ea corporis illo rem quod nulla. Et maxime placeat ut vero placeat et harum sequi. A Quis expedita id dolores sint id repellendus atque sit suscipit obcaecati vel quia galisum quo cumque internos!
+          Believing they have left behind shadowy figures from their past, newlyweds Christian and Ana fully embrace an inextricable connection and shared life of luxury. But just as she steps into her role as Mrs. Grey and he relaxes into an unfamiliar stability, new threats could jeopardize their happy ending before it even begins.
         </textarea>
       </div>
     </div>

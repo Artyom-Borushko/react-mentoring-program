@@ -2,7 +2,7 @@ import './movieForm.css';
 import React, { useRef } from "react";
 import Input from "../shared/input/Input";
 import Button from "../shared/button/Button";
-import {getFormDataObject} from "../../utilities/utilities";
+import {getFormDataObject, getMovieRuntime} from "../../utilities/utilities";
 
 export default function MovieForm({initialMovie = {}, onSubmit}) {
 
@@ -39,28 +39,28 @@ export default function MovieForm({initialMovie = {}, onSubmit}) {
                     labelText={'Release date'}
                     type={'date'}
                     id={'movieReleaseDate'}
-                    initialValue={initialMovie.releaseDate}
+                    initialValue={initialMovie.release_date}
                     ref={releaseDateRef}
                 ></Input>
                 <Input
                     labelText={'Movie URL'}
                     type={'text'}
                     id={'movieUrl'}
-                    initialValue={initialMovie.src}
+                    initialValue={initialMovie.src || '/images/movies-list/bohemianRhapsody.png'}
                     ref={urlRef}
                 ></Input>
                 <Input
                     labelText={'Rating'}
                     type={'text'}
                     id={'movieRating'}
-                    initialValue={initialMovie.rating}
+                    initialValue={initialMovie.vote_average}
                     ref={ratingRef}
                 ></Input>
                 <Input
                     labelText={'Genre'}
                     type={'checkbox'}
                     id={'movieGenre'}
-                    dropdownOptions={initialMovie.relevantGenres}
+                    dropdownOptions={initialMovie.genres}
                     dropdownOpenerText={'Select Genre'}
                     ref={genreRef}
                 ></Input>
@@ -68,14 +68,14 @@ export default function MovieForm({initialMovie = {}, onSubmit}) {
                     labelText={'Runtime'}
                     type={'text'}
                     id={'movieRuntime'}
-                    initialValue={initialMovie.duration}
+                    initialValue={getMovieRuntime(initialMovie.runtime)}
                     ref={runtimeRef}
                 ></Input>
                 <Input
                     labelText={'Overview'}
                     type={'textarea'}
                     id={'movieOverview'}
-                    initialValue={initialMovie.description}
+                    initialValue={initialMovie.overview}
                     ref={overviewRef}
                 ></Input>
             </div>

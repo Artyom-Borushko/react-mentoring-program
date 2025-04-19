@@ -16,24 +16,24 @@ exports[`MovieCard component tests renders MovieCard component 1`] = `
     <img
       alt="movie card"
       aria-label="movie card"
-      src="/images/movies-list/pulpFiction.png"
+      src="/images/movies-list/bohemianRhapsody.png"
     />
     <div
       class="movie-name-year-wrapper"
     >
       <p>
-        Pulp Fiction
+        Fifty Shades Freed
       </p>
       <p
         class="movie-release-year"
       >
-        2004
+        2018
       </p>
     </div>
     <p
       class="movie-genres"
     >
-      action, crime
+      Drama, Romance
     </p>
   </div>
 </div>

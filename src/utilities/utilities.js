@@ -15,27 +15,40 @@ export function getFormDataObject(event) {
     return formObject;
 }
 
-export function searchSubstring(data, searchSubstring, searchIn = 'title') {
-    if (!searchSubstring) return data;
-    const searchResult = [];
-    data.forEach(searchableObject => {
-        if (searchableObject[searchIn].trim().toLowerCase()
-                .includes(searchSubstring.trim().toLowerCase())
-        ) {
-            searchResult.push(searchableObject);
-        }
-    });
-    return searchResult;
+export function mapMoviesSortingOptions(FESortingOption) {
+    const frontEntToBackEndSortingMap = {
+        'release date': 'release_date',
+        'title': 'title',
+    }
+    return frontEntToBackEndSortingMap[FESortingOption] || '';
 }
 
-export function filter(data, filterCriteria, filterIn = 'relevantGenres') {
-    if (!filterCriteria || filterCriteria === 'all') return data;
-    const filterResult = [];
-    data.forEach(filterableObject => {
-        if (filterableObject[filterIn].includes(filterCriteria.trim().toLowerCase())
-        ) {
-            filterResult.push(filterableObject);
+export function buildRequestURL(baseURL, params = {}, removeParams = []) {
+    const url = new URL(baseURL);
+
+    removeParams.forEach((param) => {
+        if (url.searchParams.has(param)) {
+            url.searchParams.delete(param);
         }
     });
-    return filterResult;
+
+    for (const [key, value] of Object.entries(params)) {
+        if (value !== undefined && value !== null && value !== '') {
+            url.searchParams.set(key, value);
+        }
+    }
+
+    return url.toString();
+}
+
+export function getMovieRuntime(totalMinutes) {
+    if (!totalMinutes) return 'N/A';
+    const hours = Math.floor(totalMinutes / 60);
+    const minutes = totalMinutes % 60;
+    return `${hours}h ${minutes}min`;
+}
+
+export function getMovieReleaseYear(releaseDate) {
+    if (releaseDate) return releaseDate.split('-')[0];
+    return '';
 }
