@@ -9,7 +9,7 @@ exports[`MovieDetails component tests renders MovieDetails component 1`] = `
       alt="movie details"
       aria-label="movie details"
       class="movie-details-image"
-      src="/images/movies-list/pulpFiction.png"
+      src="/images/movies-list/bohemianRhapsody.png"
     />
     <div
       class="movie-details-information"
@@ -20,18 +20,18 @@ exports[`MovieDetails component tests renders MovieDetails component 1`] = `
         <p
           class="movie-details-title"
         >
-          Pulp Fiction
+          Fifty Shades Freed
         </p>
         <p
           class="movie-details-rating"
         >
-          9.2
+          6.1
         </p>
       </div>
       <p
         class="movie-details-genres"
       >
-        action, crime
+        Drama, Romance
       </p>
       <div
         class="movie-details-year-duration"
@@ -39,18 +39,18 @@ exports[`MovieDetails component tests renders MovieDetails component 1`] = `
         <span
           class="movie-details-year"
         >
-          2004
+          2018
         </span>
         <span
           class="movie-details-duration"
         >
-          2h 22min
+          1h 46min
         </span>
       </div>
       <p
         class="movie-details-description"
       >
-        Lorem ipsum dolor sit amet. Eum autem quod aut dolorem voluptatum nam dolores sunt. Ea velit placeat ea corporis illo rem quod nulla. Et maxime placeat ut vero placeat et harum sequi. A Quis expedita id dolores sint id repellendus atque sit suscipit obcaecati vel quia galisum quo cumque internos!
+        Believing they have left behind shadowy figures from their past, newlyweds Christian and Ana fully embrace an inextricable connection and shared life of luxury. But just as she steps into her role as Mrs. Grey and he relaxes into an unfamiliar stability, new threats could jeopardize their happy ending before it even begins.
       </p>
     </div>
   </div>

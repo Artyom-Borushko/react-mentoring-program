@@ -19,24 +19,24 @@ exports[`MovieTile component tests renders MovieTile component 1`] = `
       <img
         alt="movie card"
         aria-label="movie card"
-        src="/images/movies-list/pulpFiction.png"
+        src="/images/movies-list/bohemianRhapsody.png"
       />
       <div
         class="movie-name-year-wrapper"
       >
         <p>
-          Pulp Fiction
+          Fifty Shades Freed
         </p>
         <p
           class="movie-release-year"
         >
-          2004
+          2018
         </p>
       </div>
       <p
         class="movie-genres"
       >
-        action, crime
+        Drama, Romance
       </p>
     </div>
     <div
@@ -59,18 +59,18 @@ exports[`MovieTile component tests renders MovieTile component 1`] = `
         class="movie-name-year-wrapper"
       >
         <p>
-          Bohemian Rhapsody
+          Zootopia
         </p>
         <p
           class="movie-release-year"
         >
-          2003
+          2016
         </p>
       </div>
       <p
         class="movie-genres"
       >
-        documentary, drama
+        Animation, Adventure, Family, Comedy
       </p>
     </div>
     <div
@@ -87,24 +87,24 @@ exports[`MovieTile component tests renders MovieTile component 1`] = `
       <img
         alt="movie card"
         aria-label="movie card"
-        src="/images/movies-list/killBillVol2.png"
+        src="/images/movies-list/bohemianRhapsody.png"
       />
       <div
         class="movie-name-year-wrapper"
       >
         <p>
-          Kill Bill: Vol 2
+          Star Wars: The Last Jedi
         </p>
         <p
           class="movie-release-year"
         >
-          1994
+          2017
         </p>
       </div>
       <p
         class="movie-genres"
       >
-        comedy, crime, oscar
+        Fantasy, Adventure, Science Fiction
       </p>
     </div>
     <div
@@ -121,24 +121,24 @@ exports[`MovieTile component tests renders MovieTile component 1`] = `
       <img
         alt="movie card"
         aria-label="movie card"
-        src="/images/movies-list/avengersWarOfInfinity.png"
+        src="/images/movies-list/bohemianRhapsody.png"
       />
       <div
         class="movie-name-year-wrapper"
       >
         <p>
-          Avengers: War of Infinity
+          Black Panther
         </p>
         <p
           class="movie-release-year"
         >
-          2004
+          2018
         </p>
       </div>
       <p
         class="movie-genres"
       >
-        action, adventure
+        Action, Adventure, Fantasy, Science Fiction
       </p>
     </div>
     <div
@@ -155,24 +155,24 @@ exports[`MovieTile component tests renders MovieTile component 1`] = `
       <img
         alt="movie card"
         aria-label="movie card"
-        src="/images/movies-list/inception.png"
+        src="/images/movies-list/bohemianRhapsody.png"
       />
       <div
         class="movie-name-year-wrapper"
       >
         <p>
-          Inception
+          Coco
         </p>
         <p
           class="movie-release-year"
         >
-          2003
+          2017
         </p>
       </div>
       <p
         class="movie-genres"
       >
-        action, adventure, horror
+        Adventure, Comedy, Family, Animation
       </p>
     </div>
     <div
@@ -189,24 +189,160 @@ exports[`MovieTile component tests renders MovieTile component 1`] = `
       <img
         alt="movie card"
         aria-label="movie card"
-        src="/images/movies-list/reservoirDogs.png"
+        src="/images/movies-list/bohemianRhapsody.png"
       />
       <div
         class="movie-name-year-wrapper"
       >
         <p>
-          Reservoir dogs
+          Ready Player One
         </p>
         <p
           class="movie-release-year"
         >
-          1994
+          2018
         </p>
       </div>
       <p
         class="movie-genres"
       >
-        crime, oscar
+        Adventure, Science Fiction, Action
+      </p>
+    </div>
+    <div
+      class="movie-card"
+    >
+      <div>
+        <img
+          alt="expand options"
+          aria-label="expand options"
+          class="movie-expand-options-icon movie options"
+          src="images/options-selector/threeDotsExpandOptionsIcon.png"
+        />
+      </div>
+      <img
+        alt="movie card"
+        aria-label="movie card"
+        src="/images/movies-list/bohemianRhapsody.png"
+      />
+      <div
+        class="movie-name-year-wrapper"
+      >
+        <p>
+          Tomb Raider
+        </p>
+        <p
+          class="movie-release-year"
+        >
+          2018
+        </p>
+      </div>
+      <p
+        class="movie-genres"
+      >
+        Action, Adventure
+      </p>
+    </div>
+    <div
+      class="movie-card"
+    >
+      <div>
+        <img
+          alt="expand options"
+          aria-label="expand options"
+          class="movie-expand-options-icon movie options"
+          src="images/options-selector/threeDotsExpandOptionsIcon.png"
+        />
+      </div>
+      <img
+        alt="movie card"
+        aria-label="movie card"
+        src="/images/movies-list/bohemianRhapsody.png"
+      />
+      <div
+        class="movie-name-year-wrapper"
+      >
+        <p>
+          Thor: Ragnarok
+        </p>
+        <p
+          class="movie-release-year"
+        >
+          2017
+        </p>
+      </div>
+      <p
+        class="movie-genres"
+      >
+        Action, Adventure, Fantasy
+      </p>
+    </div>
+    <div
+      class="movie-card"
+    >
+      <div>
+        <img
+          alt="expand options"
+          aria-label="expand options"
+          class="movie-expand-options-icon movie options"
+          src="images/options-selector/threeDotsExpandOptionsIcon.png"
+        />
+      </div>
+      <img
+        alt="movie card"
+        aria-label="movie card"
+        src="/images/movies-list/bohemianRhapsody.png"
+      />
+      <div
+        class="movie-name-year-wrapper"
+      >
+        <p>
+          Beauty and the Beast
+        </p>
+        <p
+          class="movie-release-year"
+        >
+          2017
+        </p>
+      </div>
+      <p
+        class="movie-genres"
+      >
+        Family, Fantasy, Romance
+      </p>
+    </div>
+    <div
+      class="movie-card"
+    >
+      <div>
+        <img
+          alt="expand options"
+          aria-label="expand options"
+          class="movie-expand-options-icon movie options"
+          src="images/options-selector/threeDotsExpandOptionsIcon.png"
+        />
+      </div>
+      <img
+        alt="movie card"
+        aria-label="movie card"
+        src="/images/movies-list/bohemianRhapsody.png"
+      />
+      <div
+        class="movie-name-year-wrapper"
+      >
+        <p>
+          The Shape of Water
+        </p>
+        <p
+          class="movie-release-year"
+        >
+          2017
+        </p>
+      </div>
+      <p
+        class="movie-genres"
+      >
+        Drama, Fantasy, Romance
       </p>
     </div>
   </div>

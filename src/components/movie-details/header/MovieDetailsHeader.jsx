@@ -1,3 +1,4 @@
+import React from "react";
 import './movieDetailsHeader.css';
 
 export default function MovieDetailsHeader({searchAllHandler}) {

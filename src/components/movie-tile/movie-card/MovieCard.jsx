@@ -1,8 +1,10 @@
+import React, {memo} from "react";
 import './movieCard.css';
 import OptionsSelector from "../../shared/OptionsSelector";
 import {movieDropdownOptions} from "../../../data/dropdownsOptions";
+import {getMovieReleaseYear} from "../../../utilities/utilities";
 
-export default function MovieCard({movie, clickHandler}) {
+export const MovieCard = memo(function MovieCard({movie, clickHandler}) {
 
     const handleDropdownSelection = (event) => {
         console.log('dropdown elements selected: ',
@@ -21,16 +23,18 @@ export default function MovieCard({movie, clickHandler}) {
             />
 
             <img
-                src={movie.src}
+                src={movie.src || '/images/movies-list/bohemianRhapsody.png'}
                 alt='movie card'
                 aria-label={'movie card'}
                 onClick={() => clickHandler(movie)}
             />
             <div className={'movie-name-year-wrapper'}>
                 <p>{movie.title}</p>
-                <p className={'movie-release-year'}>{movie.releaseYear}</p>
+                <p className={'movie-release-year'}>{getMovieReleaseYear(movie.release_date)}</p>
             </div>
-            <p className={'movie-genres'}>{movie.relevantGenres.join(', ')}</p>
+            <p className={'movie-genres'}>{movie.genres.join(', ')}</p>
         </div>
     );
-}
+})
+
+export default MovieCard;

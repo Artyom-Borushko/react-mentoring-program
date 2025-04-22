@@ -1,3 +1,4 @@
+import React from "react";
 import './moviesCounter.css';
 
 export default function MoviesCounter({movies}) {

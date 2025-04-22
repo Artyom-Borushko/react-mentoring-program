@@ -1,3 +1,4 @@
+import React from "react";
 import './genreSelect.css'
 
 export default function GenreSelect({selectedGenre, listOfGenres, genreSelectHandler}) {

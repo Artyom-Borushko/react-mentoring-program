@@ -4,36 +4,51 @@ import React from "react";
 import SearchForm from "./SearchForm";
 
 describe("SearchForm component tests", () => {
-    const initialSearch = 'Initial search test string';
+    const placeholder = 'What do you want to watch?';
     const fakeSearchString = 'new search text';
 
     it("renders SearchForm component with initial provided search", () => {
-        render(<SearchForm initialSearch={initialSearch} />);
+        render(<SearchForm placeholder={placeholder}/>);
 
-        expect(screen.getByDisplayValue(initialSearch)).toBeInTheDocument();
+        expect(screen.getByPlaceholderText(placeholder)).toBeInTheDocument();
     });
 
-    it("submits correct search string on button click", async () => {
+    it("form submits on button click and correct search string is in input", async () => {
         const mockSearchHandler = jest.fn();
+        const symbolInputArray = [];
+        const setSearchInputValueTest = function(searchInputSybmol) {
+            symbolInputArray.push(searchInputSybmol);
+        };
         render(<SearchForm
-            initialSearch={initialSearch}
-            searchHandler={mockSearchHandler}/>
+            placeholder={placeholder}
+            searchHandler={mockSearchHandler}
+            searchInputValue={''}
+            setSearchInputValue={setSearchInputValueTest}
+            />
         );
 
         await userEvent.type(
-            screen.getByPlaceholderText('What do you want to watch?'),
+            screen.getByPlaceholderText(placeholder),
             fakeSearchString
         );
         await userEvent.click(screen.getByRole('button', {name: 'Search'}))
 
-        expect(mockSearchHandler).toHaveBeenCalledWith(initialSearch.concat(fakeSearchString));
+        expect(mockSearchHandler).toHaveBeenCalledTimes(1);
+        expect(symbolInputArray.join('')).toEqual(fakeSearchString);
     });
 
-    it("submits correct search string on enter press", async () => {
+    it("form submits on enter press and correct search string is in input", async () => {
         const mockSearchHandler = jest.fn();
+        const symbolInputArray = [];
+        const setSearchInputValueTest = function(searchInputSybmol) {
+            symbolInputArray.push(searchInputSybmol);
+        };
         render(<SearchForm
-            initialSearch={initialSearch}
-            searchHandler={mockSearchHandler}/>
+            placeholder={placeholder}
+            searchHandler={mockSearchHandler}
+            searchInputValue={''}
+            setSearchInputValue={setSearchInputValueTest}
+            />
         );
 
         await userEvent.type(
@@ -42,6 +57,7 @@ describe("SearchForm component tests", () => {
         );
         await userEvent.keyboard('{Enter}');
 
-        expect(mockSearchHandler).toHaveBeenCalledWith(initialSearch.concat(fakeSearchString));
+        expect(mockSearchHandler).toHaveBeenCalledTimes(1);
+        expect(symbolInputArray.join('')).toEqual(fakeSearchString);
     });
 });

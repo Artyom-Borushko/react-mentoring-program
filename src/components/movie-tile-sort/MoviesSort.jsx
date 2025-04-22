@@ -1,3 +1,4 @@
+import React from "react";
 import './moviesSort.css'
 import GenreSelect from "./sorters/genre-sorter/GenreSelect";
 import {listOfGenres} from "../../data/movieGenres";

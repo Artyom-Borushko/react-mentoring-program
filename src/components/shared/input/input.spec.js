@@ -23,7 +23,7 @@ describe("Input component tests", () => {
             labelText={'Overview'}
             id={'movieOverview'}
             type={'textarea'}
-            initialValue={listOfMoviesMock[2].description}
+            initialValue={listOfMoviesMock[2].overview}
         />);
 
         expect(container).toMatchSnapshot();

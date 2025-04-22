@@ -27,5 +27,5 @@ function sortByProperty(array, property, order = 'asc') {
 
 export function moviesSort(array, sortingText, order = 'asc') {
     const movieProperty = sortingTextToMoviesMapping[sortingText.trim().toLowerCase()]
-    return sortByProperty(array, movieProperty);
+    return sortByProperty(array, movieProperty, order);
 }

@@ -1,3 +1,4 @@
+import React from "react";
 import MovieCard from "./movie-card/MovieCard";
 import './movieTile.css';
 

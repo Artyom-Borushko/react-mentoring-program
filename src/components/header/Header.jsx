@@ -1,11 +1,8 @@
+import React from "react";
 import SearchForm from "../search/SearchForm";
 import './header.css';
 
-export default function Header() {
-
-    const onSearch = (searchString) => {
-        console.log('search happened with searchString: ', searchString);
-    }
+export default function Header({onMovieSearch, searchInputValue, setSearchInputValue}) {
 
     return (
         <div className={'header'}>
@@ -17,8 +14,11 @@ export default function Header() {
             <div>
                 <h1 className={'header-header'}>Find your movie</h1>
                 <SearchForm
-                    initialSearch={'movie1'}
-                    searchHandler={onSearch}>
+                    searchHandler={onMovieSearch}
+                    placeholder={'What do you want to watch?'}
+                    searchInputValue={searchInputValue}
+                    setSearchInputValue={setSearchInputValue}
+                >
                 </SearchForm>
             </div>
 
