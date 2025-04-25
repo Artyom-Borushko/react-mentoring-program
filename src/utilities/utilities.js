@@ -23,22 +23,12 @@ export function mapMoviesSortingOptions(FESortingOption) {
     return frontEntToBackEndSortingMap[FESortingOption] || '';
 }
 
-export function buildRequestURL(baseURL, params = {}, removeParams = []) {
-    const url = new URL(baseURL);
-
-    removeParams.forEach((param) => {
-        if (url.searchParams.has(param)) {
-            url.searchParams.delete(param);
-        }
-    });
-
-    for (const [key, value] of Object.entries(params)) {
-        if (value !== undefined && value !== null && value !== '') {
-            url.searchParams.set(key, value);
-        }
+export function BEtoFEMapMoviesSortingOptions(BESortingOption) {
+    const backEndToFrontEndSortingMap = {
+        'release_date': 'release date',
+        'title': 'title',
     }
-
-    return url.toString();
+    return backEndToFrontEndSortingMap[BESortingOption] || BESortingOption;
 }
 
 export function getMovieRuntime(totalMinutes) {

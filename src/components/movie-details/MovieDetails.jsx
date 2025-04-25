@@ -1,38 +1,60 @@
 import React from "react";
 import './movieDetails.css';
 import {getMovieReleaseYear, getMovieRuntime} from "../../utilities/utilities";
+import MovieDetailsHeader from "./header/MovieDetailsHeader";
+import {useLoaderData, useOutletContext} from "react-router-dom";
 
-export default function MovieDetails({movie}) {
+export async function movieDetailsLoader({ params }) {
+    const requestUrl = `http://localhost:4000/movies/${params.movieId}`;
+    try {
+        const response = await fetch(requestUrl);
+        const movie = await response.json();
+        return { movie };
+    } catch (err) {
+        console.error('Error fetching Movie details', err.message);
+        return {};
+    }
+}
+
+export default function MovieDetails() {
+
+    const {handleSearchAll} = useOutletContext();
+    const { movie } = useLoaderData();
 
     return (
-        <div className={'movie-details'}>
-            <img
-                src={movie.src || '/images/movies-list/bohemianRhapsody.png'}
-                alt='movie details'
-                className={'movie-details-image'}
-                aria-label={'movie details'}
-            />
+        <>
+            <MovieDetailsHeader
+                searchAllHandler={handleSearchAll}>
+            </MovieDetailsHeader>
+            <div className={'movie-details'}>
+                <img
+                    src={movie.src || '/images/movies-list/bohemianRhapsody.png'}
+                    alt='movie details'
+                    className={'movie-details-image'}
+                    aria-label={'movie details'}
+                />
 
-             <div className={'movie-details-information'}>
-                 <div className={'movie-details-title-rating'}>
-                     <p className={'movie-details-title'}>{movie.title}</p>
-                     <p className={'movie-details-rating'}>{movie.vote_average}</p>
-                 </div>
-                 <p className={'movie-details-genres'}>{movie.genres.join(', ')}</p>
+                <div className={'movie-details-information'}>
+                    <div className={'movie-details-title-rating'}>
+                        <p className={'movie-details-title'}>{movie.title}</p>
+                        <p className={'movie-details-rating'}>{movie.vote_average}</p>
+                    </div>
+                    <p className={'movie-details-genres'}>{movie.genres.join(', ')}</p>
 
-                 <div className={'movie-details-year-duration'}>
+                    <div className={'movie-details-year-duration'}>
                      <span className={'movie-details-year'}>
                          {getMovieReleaseYear(movie.release_date)}
                      </span>
-                     <span className={'movie-details-duration'}>
+                        <span className={'movie-details-duration'}>
                          {getMovieRuntime(movie.runtime)}
                      </span>
-                 </div>
+                    </div>
 
-                 <p className={'movie-details-description'}>
-                     {movie.overview}
-                 </p>
-             </div>
-        </div>
+                    <p className={'movie-details-description'}>
+                        {movie.overview}
+                    </p>
+                </div>
+            </div>
+        </>
     );
 }
