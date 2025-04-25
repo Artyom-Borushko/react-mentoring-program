@@ -1,9 +1,6 @@
 import React, {useCallback, useEffect, useRef, useState} from "react";
-import {useSearchParams} from "react-router-dom";
+import {Outlet, useLocation, useNavigate, useSearchParams} from "react-router-dom";
 import './movieListPage.css';
-import Header from "../../components/header/Header";
-import MovieDetails from "../../components/movie-details/MovieDetails";
-import MovieDetailsHeader from "../../components/movie-details/header/MovieDetailsHeader";
 import MoviesSort from "../../components/movie-tile-sort/MoviesSort";
 import MoviesCounter from "../../components/movie-tile/MoviesCounter";
 import {
@@ -27,8 +24,9 @@ export default function MovieListPage() {
     const [searchInputValue, setSearchInputValue] = useState(searchQuery);
     const [selectedSortOption, setSelectedSortOption] = useState(BEtoFEMapMoviesSortingOptions(sortByQuery));
     const [movies, setMovies] = useState([]);
-    const [movieSelected, setMovieSelected] = useState(undefined);
     const topRef = useRef(null);
+    const navigate = useNavigate();
+    const location = useLocation();
 
     const requestUrl = (() => {
         const params = new URLSearchParams(searchParams);
@@ -56,11 +54,11 @@ export default function MovieListPage() {
 
     const onMovieSelect = useCallback((selectedMovie) => {
         topRef.current.scrollIntoView({ behavior: 'smooth' })
-        setMovieSelected(selectedMovie);
-    }, []);
+        navigate(`/${selectedMovie.id}${location.search}`);
+    }, [location.search, navigate]);
 
     const handleSearchAll = () => {
-        setMovieSelected(undefined);
+        navigate(`/${location.search}`);
     }
 
     const genreSelectHandler = (selectedGenre) => {
@@ -94,22 +92,14 @@ export default function MovieListPage() {
     return (
         <>
             <div className={'general-header'} ref={topRef}>
-                {!movieSelected && <Header
-                    onMovieSearch={onMovieSearch}
-                    searchInputValue={searchInputValue}
-                    setSearchInputValue={setSearchInputValue}
-                >
-                </Header>}
-                {movieSelected && (
-                    <>
-                        <MovieDetailsHeader
-                            searchAllHandler={handleSearchAll}>
-                        </MovieDetailsHeader>
-                        <MovieDetails
-                            movie={movieSelected}>
-                        </MovieDetails>
-                    </>
-                )}
+                <Outlet
+                    context={{
+                        onMovieSearch,
+                        searchInputValue,
+                        setSearchInputValue,
+                        handleSearchAll
+                    }}
+                />
             </div>
 
             <div className={'header-from-main-divider'}></div>
