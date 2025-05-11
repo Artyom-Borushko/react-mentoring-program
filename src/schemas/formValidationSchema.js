@@ -3,7 +3,7 @@ import * as Yup from "yup";
 
 export const formValidationSchema = Yup.object({
     movieTitle: Yup.string()
-        .max(15, 'Must be 15 characters or less')
+        .max(50, 'Must be 50 characters or less')
         .required('Movie Title is required'),
     movieReleaseDate: Yup.date()
         .max(new Date(new Date().setFullYear(new Date().getFullYear() + 2)), 'Release date cannot be more than 2 years from today')

@@ -8,7 +8,7 @@ import TextArea from "../shared/input/text-area/TextArea";
 import {movieGenres} from "../../data/movieGenres";
 import {formValidationSchema} from "../../schemas/formValidationSchema";
 
-export default function MovieForm({onSubmit}) {
+export default function MovieForm({onSubmit, movie}) {
 
     const [showDropdown, setShowDropdown] = useState(false);
 
@@ -21,13 +21,13 @@ export default function MovieForm({onSubmit}) {
             <Formik
                 className={'movie-form'}
                 initialValues={{
-                    movieTitle: "",
-                    movieReleaseDate: "",
-                    movieUrl: "",
-                    movieRating: "",
-                    movieGenres: [],
-                    movieRuntime: '',
-                    movieOverview: '',
+                    movieTitle: movie && movie.title || "",
+                    movieReleaseDate: movie && movie.release_date || "",
+                    movieUrl: movie && movie.poster_path || "",
+                    movieRating: movie && movie.vote_average || "",
+                    movieGenres: movie && movie.genres || [],
+                    movieRuntime: movie && movie.runtime || "",
+                    movieOverview: movie && movie.overview || "",
                 }}
                 validationSchema={formValidationSchema}
                 validateOnBlur={false}
@@ -112,7 +112,7 @@ export default function MovieForm({onSubmit}) {
 
                         <div className={'movie-form-confirmation-control'}>
                             <Button
-                                type={'submit'}
+                                type={'reset'}
                                 disabled={isSubmitting}
                                 onClick={() => resetForm()}
                             >

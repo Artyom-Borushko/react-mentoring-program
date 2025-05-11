@@ -13,10 +13,26 @@ describe("MovieForm component tests", () => {
         expect(container).toMatchSnapshot();
     });
 
-    it("renders empty MovieForm component with initial movie", () => {
-        const {container} = render(<MovieForm initialMovie={listOfMoviesMock[0]}/>);
+    it("renders MovieForm component with predefined movie", async () => {
+        render(<MovieForm movie={listOfMoviesMock[0]}/>);
 
-        expect(container).toMatchSnapshot();
+        const titleInput = screen.getByLabelText('Title');
+        expect(titleInput.value).toBe('Fifty Shades Freed');
+
+        const releaseDateInput = screen.getByLabelText('Release date');
+        expect(releaseDateInput.value).toBe('2018-02-07');
+
+        const movieUrlInput = screen.getByLabelText('Movie URL');
+        expect(movieUrlInput.value).toBe('https://image.tmdb.org/t/p/w500/3kcEGnYBHDeqmdYf8ZRbKdfmlUy.jpg');
+
+        const ratingInput = screen.getByLabelText('Rating');
+        expect(ratingInput.value).toBe('6.1');
+
+        const runtimeInput = screen.getByLabelText('Runtime');
+        expect(runtimeInput.value).toBe('106');
+
+        const descriptionInput = screen.getByLabelText('Overview');
+        expect(descriptionInput.value).toBe('Believing they have left behind shadowy figures from their past, newlyweds Christian and Ana fully embrace an inextricable connection and shared life of luxury. But just as she steps into her role as Mrs. Grey and he relaxes into an unfamiliar stability, new threats could jeopardize their happy ending before it even begins.');
     });
 
     it("submits form with movie data", async () => {

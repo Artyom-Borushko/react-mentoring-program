@@ -58,6 +58,10 @@ export default function MovieListPage() {
         navigate(`/${selectedMovie.id}${location.search}`);
     }, [location.search, navigate]);
 
+    const handleDropdownSelection = useCallback((event, movie) => {
+        if (event.target.innerText.trim().toLowerCase() === 'edit') navigate(`/${movie.id}/edit${location.search}`);
+    }, [location.search, navigate]);
+
     const handleSearchAll = () => {
         navigate(`/${location.search}`);
     }
@@ -125,7 +129,9 @@ export default function MovieListPage() {
                     <React.Suspense fallback={<h3>Loading movies... Please wait</h3>}>
                         <MovieTile
                             movies={movies}
-                            clickHandler={onMovieSelect}>
+                            clickHandler={onMovieSelect}
+                            handleDropdownSelection={handleDropdownSelection}
+                        >
                         </MovieTile>
                     </React.Suspense>
                 </div>
