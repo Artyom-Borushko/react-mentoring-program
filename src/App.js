@@ -10,6 +10,7 @@ function App() {
         <div className={'app'}>
             <Counter initialCounter={123}></Counter>
             <MovieListPage></MovieListPage>
+            <div className="tint-overlay"></div>
         </div>
     );
 }

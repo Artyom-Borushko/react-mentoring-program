@@ -2,10 +2,11 @@ import React from "react";
 import './movieDetails.css';
 import {getMovieReleaseYear, getMovieRuntime} from "../../utilities/utilities";
 import MovieDetailsHeader from "./header/MovieDetailsHeader";
-import {useLoaderData, useOutletContext} from "react-router-dom";
+import {useLoaderData, useOutletContext} from "react-router";
+import {baseMoviesPath} from "../../data/newtwork";
 
 export async function movieDetailsLoader({ params }) {
-    const requestUrl = `http://localhost:4000/movies/${params.movieId}`;
+    const requestUrl = `${baseMoviesPath}/${params.movieId}`;
     try {
         const response = await fetch(requestUrl);
         const movie = await response.json();

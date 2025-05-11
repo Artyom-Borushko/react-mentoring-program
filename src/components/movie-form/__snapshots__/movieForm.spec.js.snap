@@ -3,13 +3,14 @@
 exports[`MovieForm component tests renders empty MovieForm component 1`] = `
 <div>
   <form
+    action="#"
     class="movie-form"
   >
     <div
       class="movie-form-content"
     >
       <div
-        class="input-field"
+        class="input-wrapper"
       >
         <label
           for="movieTitle"
@@ -17,15 +18,16 @@ exports[`MovieForm component tests renders empty MovieForm component 1`] = `
           Title
         </label>
         <input
-          class="title"
+          class="text-input"
           id="movieTitle"
           name="movieTitle"
+          placeholder="Title"
           type="text"
           value=""
         />
       </div>
       <div
-        class="input-field"
+        class="input-wrapper"
       >
         <label
           for="movieReleaseDate"
@@ -33,7 +35,7 @@ exports[`MovieForm component tests renders empty MovieForm component 1`] = `
           Release date
         </label>
         <input
-          class="release date"
+          class="text-input"
           id="movieReleaseDate"
           name="movieReleaseDate"
           type="date"
@@ -41,7 +43,7 @@ exports[`MovieForm component tests renders empty MovieForm component 1`] = `
         />
       </div>
       <div
-        class="input-field"
+        class="input-wrapper"
       >
         <label
           for="movieUrl"
@@ -49,15 +51,16 @@ exports[`MovieForm component tests renders empty MovieForm component 1`] = `
           Movie URL
         </label>
         <input
-          class="movie url"
+          class="text-input"
           id="movieUrl"
           name="movieUrl"
+          placeholder="https://"
           type="text"
-          value="/images/movies-list/bohemianRhapsody.png"
+          value=""
         />
       </div>
       <div
-        class="input-field"
+        class="input-wrapper"
       >
         <label
           for="movieRating"
@@ -65,25 +68,26 @@ exports[`MovieForm component tests renders empty MovieForm component 1`] = `
           Rating
         </label>
         <input
-          class="rating"
+          class="text-input"
           id="movieRating"
           name="movieRating"
+          placeholder="7.8"
           type="text"
           value=""
         />
       </div>
       <div
-        class="input-field"
+        class="input-wrapper"
       >
         <button
-          class="button dropdown-opener"
-          type="dropdown-opener"
+          class="dropdown-opener"
+          type="button"
         >
-          Select Genre
+          Select Genres
         </button>
       </div>
       <div
-        class="input-field"
+        class="input-wrapper"
       >
         <label
           for="movieRuntime"
@@ -91,15 +95,16 @@ exports[`MovieForm component tests renders empty MovieForm component 1`] = `
           Runtime
         </label>
         <input
-          class="runtime"
+          class="text-input"
           id="movieRuntime"
           name="movieRuntime"
+          placeholder="minutes"
           type="text"
-          value="N/A"
+          value=""
         />
       </div>
       <div
-        class="input-field textarea"
+        class="input-wrapper textarea"
       >
         <label
           for="movieOverview"
@@ -107,9 +112,10 @@ exports[`MovieForm component tests renders empty MovieForm component 1`] = `
           Overview
         </label>
         <textarea
-          class="textarea"
+          class="text-area"
           id="movieOverview"
           name="movieOverview"
+          placeholder="Movie description"
         />
       </div>
     </div>
@@ -117,13 +123,13 @@ exports[`MovieForm component tests renders empty MovieForm component 1`] = `
       class="movie-form-confirmation-control"
     >
       <button
-        class="button submit"
+        class="button submit  "
         type="submit"
       >
         Reset
       </button>
       <button
-        class="button submit"
+        class="button submit  "
         type="submit"
       >
         Submit
@@ -136,13 +142,14 @@ exports[`MovieForm component tests renders empty MovieForm component 1`] = `
 exports[`MovieForm component tests renders empty MovieForm component with initial movie 1`] = `
 <div>
   <form
+    action="#"
     class="movie-form"
   >
     <div
       class="movie-form-content"
     >
       <div
-        class="input-field"
+        class="input-wrapper"
       >
         <label
           for="movieTitle"
@@ -150,15 +157,16 @@ exports[`MovieForm component tests renders empty MovieForm component with initia
           Title
         </label>
         <input
-          class="title"
+          class="text-input"
           id="movieTitle"
           name="movieTitle"
+          placeholder="Title"
           type="text"
-          value="Fifty Shades Freed"
+          value=""
         />
       </div>
       <div
-        class="input-field"
+        class="input-wrapper"
       >
         <label
           for="movieReleaseDate"
@@ -166,15 +174,15 @@ exports[`MovieForm component tests renders empty MovieForm component with initia
           Release date
         </label>
         <input
-          class="release date"
+          class="text-input"
           id="movieReleaseDate"
           name="movieReleaseDate"
           type="date"
-          value="2018-02-07"
+          value=""
         />
       </div>
       <div
-        class="input-field"
+        class="input-wrapper"
       >
         <label
           for="movieUrl"
@@ -182,15 +190,16 @@ exports[`MovieForm component tests renders empty MovieForm component with initia
           Movie URL
         </label>
         <input
-          class="movie url"
+          class="text-input"
           id="movieUrl"
           name="movieUrl"
+          placeholder="https://"
           type="text"
-          value="/images/movies-list/bohemianRhapsody.png"
+          value=""
         />
       </div>
       <div
-        class="input-field"
+        class="input-wrapper"
       >
         <label
           for="movieRating"
@@ -198,25 +207,26 @@ exports[`MovieForm component tests renders empty MovieForm component with initia
           Rating
         </label>
         <input
-          class="rating"
+          class="text-input"
           id="movieRating"
           name="movieRating"
+          placeholder="7.8"
           type="text"
-          value="6.1"
+          value=""
         />
       </div>
       <div
-        class="input-field"
+        class="input-wrapper"
       >
         <button
-          class="button dropdown-opener"
-          type="dropdown-opener"
+          class="dropdown-opener"
+          type="button"
         >
-          Select Genre
+          Select Genres
         </button>
       </div>
       <div
-        class="input-field"
+        class="input-wrapper"
       >
         <label
           for="movieRuntime"
@@ -224,15 +234,16 @@ exports[`MovieForm component tests renders empty MovieForm component with initia
           Runtime
         </label>
         <input
-          class="runtime"
+          class="text-input"
           id="movieRuntime"
           name="movieRuntime"
+          placeholder="minutes"
           type="text"
-          value="1h 46min"
+          value=""
         />
       </div>
       <div
-        class="input-field textarea"
+        class="input-wrapper textarea"
       >
         <label
           for="movieOverview"
@@ -240,25 +251,24 @@ exports[`MovieForm component tests renders empty MovieForm component with initia
           Overview
         </label>
         <textarea
-          class="textarea"
+          class="text-area"
           id="movieOverview"
           name="movieOverview"
-        >
-          Believing they have left behind shadowy figures from their past, newlyweds Christian and Ana fully embrace an inextricable connection and shared life of luxury. But just as she steps into her role as Mrs. Grey and he relaxes into an unfamiliar stability, new threats could jeopardize their happy ending before it even begins.
-        </textarea>
+          placeholder="Movie description"
+        />
       </div>
     </div>
     <div
       class="movie-form-confirmation-control"
     >
       <button
-        class="button submit"
+        class="button submit  "
         type="submit"
       >
         Reset
       </button>
       <button
-        class="button submit"
+        class="button submit  "
         type="submit"
       >
         Submit

@@ -1,0 +1,21 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Text area input component tests renders text area input with Formik 1`] = `
+<div>
+  <div
+    class="input-wrapper textarea"
+  >
+    <label
+      for="movieOverview"
+    >
+      Overview
+    </label>
+    <textarea
+      class="text-area"
+      id="movieOverview"
+      name="movieOverview"
+      placeholder="Movie description"
+    />
+  </div>
+</div>
+`;

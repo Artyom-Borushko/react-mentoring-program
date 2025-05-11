@@ -1,15 +1,23 @@
 import './dialog.css';
 import { createPortal } from 'react-dom';
-import React from "react";
+import React, {useRef} from "react";
 import FocusTrap from "focus-trap-react";
+import {useClickOutside} from "../../../hooks/ui/useClickOutside";
 
 export default function Dialog({title, children, onClose}) {
+
+    const modalRef = useRef(null);
+    useClickOutside(modalRef, onClose);
 
     return (
         <>
             {createPortal(
-                <FocusTrap>
-                    <div className={'modal-dialog'}>
+                <FocusTrap
+                    focusTrapOptions={{
+                        fallbackFocus: '.fallback-focus'
+                    }}
+                >
+                    <div className={'modal-dialog'} ref={modalRef}>
                         <img
                             src="/images/icons/whiteCrossSign.png"
                             alt="white cross"

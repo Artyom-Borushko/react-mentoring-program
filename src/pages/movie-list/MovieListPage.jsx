@@ -1,5 +1,5 @@
 import React, {useCallback, useEffect, useRef, useState} from "react";
-import {Outlet, useLocation, useNavigate, useSearchParams} from "react-router-dom";
+import {Outlet, useLocation, useNavigate, useSearchParams} from "react-router";
 import './movieListPage.css';
 import MoviesSort from "../../components/movie-tile-sort/MoviesSort";
 import MoviesCounter from "../../components/movie-tile/MoviesCounter";
@@ -8,6 +8,7 @@ import {
     mapMoviesSortingOptions,
 } from "../../utilities/utilities";
 import {useFetch} from "../../hooks/network/useFetch";
+import {baseMoviesPath} from "../../data/newtwork";
 
 const MovieTile = React.lazy(
     () => import('../../components/movie-tile/MovieTile')
@@ -30,7 +31,7 @@ export default function MovieListPage() {
 
     const requestUrl = (() => {
         const params = new URLSearchParams(searchParams);
-        return `http://localhost:4000/movies?limit=10&${params.toString()}`;
+        return `${baseMoviesPath}?limit=10&${params.toString()}`;
     })();
     const { fetchedMovies, loading, error } = useFetch(requestUrl);
 

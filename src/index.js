@@ -1,11 +1,12 @@
 import React from 'react';
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { createBrowserRouter, RouterProvider } from "react-router";
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import Header from "./components/header/Header";
 import MovieDetails, {movieDetailsLoader} from "./components/movie-details/MovieDetails";
+import AddMovieForm from "./components/movie-form/add-movie-form/AddMovieForm";
 
 const router = createBrowserRouter([
     {
@@ -16,6 +17,12 @@ const router = createBrowserRouter([
             {
                 path: "/",
                 element: <Header />,
+                children: [
+                    {
+                        path: "/new",
+                        element: <AddMovieForm />,
+                    },
+                ]
             },
             {
                 path: "/:movieId",

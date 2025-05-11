@@ -1,0 +1,23 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Text input component tests renders text input with Formik 1`] = `
+<div>
+  <div
+    class="input-wrapper"
+  >
+    <label
+      for="movieTitle"
+    >
+      Title
+    </label>
+    <input
+      class="text-input"
+      id="movieTitle"
+      name="movieTitle"
+      placeholder="Title"
+      type="text"
+      value=""
+    />
+  </div>
+</div>
+`;

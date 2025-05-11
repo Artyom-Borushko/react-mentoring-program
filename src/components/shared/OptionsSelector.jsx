@@ -1,5 +1,6 @@
-import React, { useState, useRef, useEffect } from "react";
+import React, {useState, useRef, useCallback} from "react";
 import './optionsSelector.css';
+import {useClickOutside} from "../../hooks/ui/useClickOutside";
 
 export default function OptionsSelector({dropdownOptions, onDropdownSelection, controlImageSrc, controlSource = ''}) {
     const [isOptionsDropdownVisible, setOptionsDropdownVisible] = useState(false);
@@ -14,19 +15,11 @@ export default function OptionsSelector({dropdownOptions, onDropdownSelection, c
         onDropdownSelection(event);
     };
 
-    useEffect(() => {
-        const handleClickOutside = (event) => {
-            if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
-                setOptionsDropdownVisible(false);
-            }
-        };
-
-        document.addEventListener("mousedown", handleClickOutside);
-
-        return () => {
-            document.removeEventListener("mousedown", handleClickOutside);
-        };
+    const clickOutsideHandler = useCallback(() => {
+        setOptionsDropdownVisible(false);
     }, []);
+
+    useClickOutside(dropdownRef, clickOutsideHandler);
 
     return (
         <div ref={dropdownRef}>

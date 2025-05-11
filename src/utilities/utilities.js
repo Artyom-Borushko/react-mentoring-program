@@ -1,20 +1,4 @@
 
-export function getFormDataObject(event) {
-    // extra logic here to handle collection of multiple selected checkboxes
-    const formData = new FormData(event.target);
-    const formObject = {};
-    formData.forEach((value, key) => {
-        if (formObject[key]) {
-            formObject[key] = Array.isArray(formObject[key])
-                ? [...formObject[key], value]
-                : [formObject[key], value];
-        } else {
-            formObject[key] = value;
-        }
-    });
-    return formObject;
-}
-
 export function mapMoviesSortingOptions(FESortingOption) {
     const frontEntToBackEndSortingMap = {
         'release date': 'release_date',
@@ -41,4 +25,27 @@ export function getMovieRuntime(totalMinutes) {
 export function getMovieReleaseYear(releaseDate) {
     if (releaseDate) return releaseDate.split('-')[0];
     return '';
+}
+
+const movieFormFEtoBEMappingObject = {
+    "movieTitle": "title",
+    "movieReleaseDate": "release_date",
+    "movieUrl": "poster_path",
+    "movieRating": "vote_average",
+    "movieGenres": "genres",
+    "movieRuntime": "runtime",
+    "movieOverview": "overview",
+}
+
+export function movieFormFEtoBEMapping(feMovieFormData) {
+    const feMovieFormDataTypeNormalized = {
+        ...feMovieFormData,
+        movieRuntime: Number(feMovieFormData.movieRuntime),
+        movieRating: Number(feMovieFormData.movieRating),
+    };
+    const result = {};
+    Object.keys(feMovieFormDataTypeNormalized).forEach(movieField => {
+        result[movieFormFEtoBEMappingObject[movieField]] = feMovieFormDataTypeNormalized[movieField]
+    })
+    return result;
 }

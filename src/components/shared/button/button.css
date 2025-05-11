@@ -20,3 +20,7 @@
 .button.dropdown-opener {
     width: 100px;
 }
+
+.button.submit:disabled {
+    background: rgba(246, 82, 97, 0.6);
+}

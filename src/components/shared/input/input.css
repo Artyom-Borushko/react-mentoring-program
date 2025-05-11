@@ -1,16 +1,31 @@
 
-.input-field {
+.input-wrapper {
     display: flex;
     flex-direction: column;
     flex: 0 1 40%;
     padding: 10px;
 }
 
-.input-field.textarea {
+.input-wrapper.textarea {
     flex: 0 1 100%;
     margin-bottom: 20px;
 }
 
-.input-field .textarea {
+.input-wrapper .text-area {
     min-height: 100px
 }
+
+.dropdown-content {
+    max-height: 200px;
+    max-width: 300px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    border: 1px solid #ccc;
+    padding: 10px;
+    border-radius: 4px;
+}
+
+.form-field-validation-error {
+    color: red;
+}
+

@@ -3,26 +3,33 @@ import React from "react";
 import '@testing-library/jest-dom';
 import Dialog from "./Dialog";
 import MovieForm from "../../movie-form/MovieForm";
-import {listOfMoviesMock} from "../../../data/moviesListMock";
 
 describe("Dialog component tests", () => {
 
     it("renders empty Dialog component", () => {
-        render(<Dialog
+        const {container} = render(<Dialog
             title={'test title'}
-        />);
+        >
+            <button className={'fallback-focus'}>Focusable Element</button>
+        </Dialog>);
 
-        expect(document.body).not.toHaveTextContent("test123");
+        expect(container).toMatchSnapshot();
     });
 
     it("renders Dialog component with passed children", () => {
-        render(<Dialog
-            title={'test title'}
-            children={<MovieForm initialMovie={listOfMoviesMock[5]}/>}
-        />);
+        render(
+            <>
+                <Dialog
+                    title={'test title'}
+                >
+                    <MovieForm/>
+                    <button className={'fallback-focus'}>Focusable Element</button>
+                </Dialog>
+            </>
+        );
 
         const input = screen.getByLabelText('Overview');
 
-        expect(input.value).toEqual(listOfMoviesMock[5].description);
+        expect(input).toBeInTheDocument();
     });
 });
