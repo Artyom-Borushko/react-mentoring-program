@@ -1,8 +1,11 @@
 import React from "react";
 import SearchForm from "../search/SearchForm";
 import './header.css';
+import {useOutletContext} from "react-router-dom";
 
-export default function Header({onMovieSearch, searchInputValue, setSearchInputValue}) {
+export default function Header() {
+
+    const {onMovieSearch, searchInputValue, setSearchInputValue} = useOutletContext();
 
     return (
         <div className={'header'}>

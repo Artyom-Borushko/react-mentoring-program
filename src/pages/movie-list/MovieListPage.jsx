@@ -1,12 +1,10 @@
 import React, {useCallback, useEffect, useRef, useState} from "react";
+import {Outlet, useLocation, useNavigate, useSearchParams} from "react-router-dom";
 import './movieListPage.css';
-import Header from "../../components/header/Header";
-import MovieDetails from "../../components/movie-details/MovieDetails";
-import MovieDetailsHeader from "../../components/movie-details/header/MovieDetailsHeader";
 import MoviesSort from "../../components/movie-tile-sort/MoviesSort";
 import MoviesCounter from "../../components/movie-tile/MoviesCounter";
 import {
-    buildRequestURL,
+    BEtoFEMapMoviesSortingOptions,
     mapMoviesSortingOptions,
 } from "../../utilities/utilities";
 import {useFetch} from "../../hooks/network/useFetch";
@@ -17,15 +15,24 @@ const MovieTile = React.lazy(
 
 export default function MovieListPage() {
 
-    const baseMoviesUrl = 'http://localhost:4000/movies?limit=10';
-    const [moviesUrl, setMoviesUrl] = useState(baseMoviesUrl);
-    const { fetchedMovies, loading, error } = useFetch(moviesUrl);
-    const [searchInputValue, setSearchInputValue] = useState('');
-    const [selectedSortOption, setSelectedSortOption] = useState('Select sorting');
-    const [selectedGenre, setSelectedGenre] = useState('all');
+    let [searchParams, setSearchParams] = useSearchParams();
+    const searchQuery = searchParams.get("search") || "";
+    const genreFilterQuery = searchParams.get("filter") || "all";
+    const sortByQuery = searchParams.get("sortBy") || "Select sorting";
+
+    const [selectedGenre, setSelectedGenre] = useState(genreFilterQuery);
+    const [searchInputValue, setSearchInputValue] = useState(searchQuery);
+    const [selectedSortOption, setSelectedSortOption] = useState(BEtoFEMapMoviesSortingOptions(sortByQuery));
     const [movies, setMovies] = useState([]);
-    const [movieSelected, setMovieSelected] = useState(undefined);
     const topRef = useRef(null);
+    const navigate = useNavigate();
+    const location = useLocation();
+
+    const requestUrl = (() => {
+        const params = new URLSearchParams(searchParams);
+        return `http://localhost:4000/movies?limit=10&${params.toString()}`;
+    })();
+    const { fetchedMovies, loading, error } = useFetch(requestUrl);
 
     useEffect(() => {
         if (fetchedMovies) {
@@ -34,68 +41,65 @@ export default function MovieListPage() {
     }, [fetchedMovies]);
 
     const onMovieSearch = () => {
-        setMoviesUrl((prevMovieUrl) => {
-            return buildRequestURL(prevMovieUrl, {
-                searchBy: 'title',
-                search: `${searchInputValue}`
-            })
-        });
+        const params = new URLSearchParams(searchParams);
+        if (searchInputValue) {
+            params.set("search", searchInputValue);
+            params.set("searchBy", 'title');
+        } else {
+            params.delete("search");
+            params.delete("searchBy");
+        }
+        setSearchParams(params);
     };
 
     const onMovieSelect = useCallback((selectedMovie) => {
         topRef.current.scrollIntoView({ behavior: 'smooth' })
-        setMovieSelected(selectedMovie);
-    }, []);
+        navigate(`/${selectedMovie.id}${location.search}`);
+    }, [location.search, navigate]);
 
     const handleSearchAll = () => {
-        setMovieSelected(undefined);
+        navigate(`/${location.search}`);
     }
 
     const genreSelectHandler = (selectedGenre) => {
-        setSelectedGenre(selectedGenre);
-        if (selectedGenre === 'all') {
-            setMoviesUrl((prevMovieUrl) => {
-                return buildRequestURL(prevMovieUrl, {}, ['filter']);
-            });
+        const params = new URLSearchParams(searchParams);
+        if (selectedGenre && selectedGenre === 'all') {
+            params.delete("filter");
+        } else if (selectedGenre) {
+            params.set("filter", selectedGenre);
         } else {
-            setMoviesUrl((prevMovieUrl) => {
-                return buildRequestURL(prevMovieUrl, {
-                    filter: `${selectedGenre}`
-                });
-            });
+            params.delete("filter");
         }
+        setSearchParams(params);
+        setSelectedGenre(selectedGenre);
     };
 
     const sortControlHandler = (event) => {
         setSelectedSortOption(event.target.innerText.trim().toLowerCase());
         const BESortingFieldName = mapMoviesSortingOptions(event.target.innerText.trim().toLowerCase());
-        setMoviesUrl((prevMovieUrl) => {
-            return buildRequestURL(prevMovieUrl, {
-                sortBy: `${BESortingFieldName}`,
-                sortOrder: 'desc'
-            });
-        });
+
+        const params = new URLSearchParams(searchParams);
+        if (BESortingFieldName) {
+            params.set("sortBy", BESortingFieldName);
+            params.set("sortOrder", 'desc');
+        } else {
+            params.delete("sortBy");
+            params.delete("sortOrder");
+        }
+        setSearchParams(params);
     };
 
     return (
         <>
             <div className={'general-header'} ref={topRef}>
-                {!movieSelected && <Header
-                    onMovieSearch={onMovieSearch}
-                    searchInputValue={searchInputValue}
-                    setSearchInputValue={setSearchInputValue}
-                >
-                </Header>}
-                {movieSelected && (
-                    <>
-                        <MovieDetailsHeader
-                            searchAllHandler={handleSearchAll}>
-                        </MovieDetailsHeader>
-                        <MovieDetails
-                            movie={movieSelected}>
-                        </MovieDetails>
-                    </>
-                )}
+                <Outlet
+                    context={{
+                        onMovieSearch,
+                        searchInputValue,
+                        setSearchInputValue,
+                        handleSearchAll
+                    }}
+                />
             </div>
 
             <div className={'header-from-main-divider'}></div>
