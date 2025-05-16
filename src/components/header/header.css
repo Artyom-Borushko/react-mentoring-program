@@ -44,9 +44,21 @@
 .header-title-wrapper {
     width: 90vw;
     margin-top: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .header-from-main-divider {
     background: rgba(136, 136, 136, 1);
     height:0.5em;
+}
+
+.add-movie-button {
+    background-color: rgba(136, 136, 136, 0.6);
+    border: none;
+    width: 150px;
+    height: 50px;
+    cursor: pointer;
+    font-size: 20px;
 }

@@ -2,19 +2,7 @@ import React from "react";
 import './movieDetails.css';
 import {getMovieReleaseYear, getMovieRuntime} from "../../utilities/utilities";
 import MovieDetailsHeader from "./header/MovieDetailsHeader";
-import {useLoaderData, useOutletContext} from "react-router-dom";
-
-export async function movieDetailsLoader({ params }) {
-    const requestUrl = `http://localhost:4000/movies/${params.movieId}`;
-    try {
-        const response = await fetch(requestUrl);
-        const movie = await response.json();
-        return { movie };
-    } catch (err) {
-        console.error('Error fetching Movie details', err.message);
-        return {};
-    }
-}
+import {useLoaderData, useOutletContext} from "react-router";
 
 export default function MovieDetails() {
 

@@ -4,20 +4,13 @@ import OptionsSelector from "../../shared/OptionsSelector";
 import {movieDropdownOptions} from "../../../data/dropdownsOptions";
 import {getMovieReleaseYear} from "../../../utilities/utilities";
 
-export const MovieCard = memo(function MovieCard({movie, clickHandler}) {
-
-    const handleDropdownSelection = (event) => {
-        console.log('dropdown elements selected: ',
-            event.target.innerText &&
-            event.target.innerText.trim().toLowerCase()
-        );
-    };
+export const MovieCard = memo(function MovieCard({movie, clickHandler, handleDropdownSelection}) {
 
     return (
         <div className={'movie-card'}>
             <OptionsSelector
                 dropdownOptions={movieDropdownOptions}
-                onDropdownSelection={handleDropdownSelection}
+                onDropdownSelection={(event) => handleDropdownSelection(event, movie)}
                 controlImageSrc={'images/options-selector/threeDotsExpandOptionsIcon.png'}
                 controlSource={'movie options'}
             />
