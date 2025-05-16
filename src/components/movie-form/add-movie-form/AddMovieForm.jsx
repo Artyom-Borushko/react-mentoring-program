@@ -1,15 +1,22 @@
 import React, {useEffect} from "react";
 import Dialog from "../../shared/dialog/Dialog";
 import MovieForm from "../MovieForm";
-import {baseMoviesPath} from "../../../data/newtwork";
+import {baseMoviesPath} from "../../../data/network";
 import {usePost} from "../../../hooks/network/usePost";
 import {movieFormFEtoBEMapping} from "../../../utilities/utilities";
 import {useLocation, useNavigate} from "react-router";
 
 export default function AddMovieForm() {
-    const {postData, responseData, loading, error} = usePost(baseMoviesPath);
     const navigate = useNavigate();
     const location = useLocation();
+
+    const onFormPostSuccess = (responseData) => {
+        if (responseData) {
+            if (responseData.id) navigate(`/${responseData.id}${location.search}`);
+            else navigate('/');
+        }
+    }
+    const {postData, loading, error} = usePost(baseMoviesPath, onFormPostSuccess);
 
     const handleFormSubmit = async (data) => {
         await postData(movieFormFEtoBEMapping(data));
@@ -32,13 +39,6 @@ export default function AddMovieForm() {
         };
     }, []);
 
-    useEffect(() => {
-        if (responseData) {
-            if (responseData.id) navigate(`/${responseData.id}${location.search}`);
-            else navigate('/');
-        }
-    }, [responseData]);
-
     return (
         <Dialog
             title={'Add Movie'}
@@ -50,7 +50,6 @@ export default function AddMovieForm() {
             </MovieForm>
             {loading && <p>Sending data...</p>}
             {error && <p>Error sending data: {error}</p>}
-            {responseData && <p>Movie added successfully!</p>}
         </Dialog>
     )
 }

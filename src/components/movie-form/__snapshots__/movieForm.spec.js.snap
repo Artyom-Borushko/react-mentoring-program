@@ -123,13 +123,13 @@ exports[`MovieForm component tests renders empty MovieForm component 1`] = `
       class="movie-form-confirmation-control"
     >
       <button
-        class="button reset  "
+        class="button reset"
         type="reset"
       >
         Reset
       </button>
       <button
-        class="button submit  "
+        class="button submit"
         type="submit"
       >
         Submit

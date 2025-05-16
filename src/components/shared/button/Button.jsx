@@ -6,7 +6,7 @@ export default function Button({type, children, onClick, disabled, classNames}) 
     return (
         <button
             type={type}
-            className={`button ${type} ${disabled ? 'disabled' : ''} ${classNames || ''}`}
+            className={['button', type, disabled ? 'disabled' : '', classNames].filter(Boolean).join(' ')}
             onClick={onClick}
             disabled={disabled}
         >

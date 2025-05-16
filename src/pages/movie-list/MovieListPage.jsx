@@ -8,7 +8,7 @@ import {
     mapMoviesSortingOptions,
 } from "../../utilities/utilities";
 import {useFetch} from "../../hooks/network/useFetch";
-import {baseMoviesPath} from "../../data/newtwork";
+import {baseMoviesPath} from "../../data/network";
 
 const MovieTile = React.lazy(
     () => import('../../components/movie-tile/MovieTile')

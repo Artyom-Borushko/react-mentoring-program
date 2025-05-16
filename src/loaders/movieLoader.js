@@ -1,4 +1,4 @@
-import {baseMoviesPath} from "../data/newtwork";
+import {baseMoviesPath} from "../data/network";
 
 export async function movieDetailsLoader({ params }) {
     const requestUrl = `${baseMoviesPath}/${params.movieId}`;

@@ -1,7 +1,6 @@
 import { useState } from 'react';
 
-export const usePost = (url) => {
-    const [responseData, setResponseData] = useState(null);
+export const usePost = (url, responseHandler) => {
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState(null);
 
@@ -23,7 +22,7 @@ export const usePost = (url) => {
             }
 
             const result = await response.json();
-            setResponseData(result);
+            responseHandler(result);
         } catch (err) {
             setError(err.message);
         } finally {
@@ -31,5 +30,5 @@ export const usePost = (url) => {
         }
     };
 
-    return { postData, responseData, loading, error };
+    return { postData, loading, error };
 };
