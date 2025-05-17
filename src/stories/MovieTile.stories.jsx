@@ -1,14 +1,14 @@
+import { fn } from '@storybook/test';
 import MovieTile from '../components/movie-tile/MovieTile';
-import {listOfMoviesMock} from "../data/moviesListMock";
-import {fn} from "@storybook/test";
+import listOfMoviesMock from '../data/moviesListMock';
 
 export default {
-    component: MovieTile,
+  component: MovieTile,
 };
 
 export const Movie = {
-    args: {
-        movies: listOfMoviesMock,
-        clickHandler: fn()
-    }
+  args: {
+    movies: listOfMoviesMock,
+    clickHandler: fn(),
+  },
 };

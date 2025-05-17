@@ -10,12 +10,15 @@ exports[`MovieCard component tests renders MovieCard component 1`] = `
         alt="expand options"
         aria-label="expand options"
         class="movie-expand-options-icon movie options"
+        role="button"
         src="images/options-selector/threeDotsExpandOptionsIcon.png"
       />
     </div>
     <img
       alt="movie card"
       aria-label="movie card"
+      data-testid="movie-card"
+      role="presentation"
       src="/images/movies-list/bohemianRhapsody.png"
     />
     <div

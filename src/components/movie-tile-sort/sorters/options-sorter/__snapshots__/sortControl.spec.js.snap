@@ -5,9 +5,9 @@ exports[`SortControl component tests renders SortControl component 1`] = `
   <div
     class="sort-control-wrapper"
   >
-    <label>
+    <span>
       Sort by
-    </label>
+    </span>
     <p>
       Release date
     </p>
@@ -16,6 +16,7 @@ exports[`SortControl component tests renders SortControl component 1`] = `
         alt="expand options"
         aria-label="expand options"
         class="movie-expand-options-icon movies-sort"
+        role="button"
         src="images/icons/redTriangleDown.png"
       />
     </div>

@@ -14,6 +14,7 @@ exports[`MovieDetailsHeader component tests renders MovieDetailsHeader component
       alt="search icon"
       aria-label="search icon"
       class="movie-details-search-icon"
+      role="button"
       src="/images/buttons/searchButton.png"
     />
   </div>

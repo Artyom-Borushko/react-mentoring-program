@@ -7,7 +7,7 @@
     text-transform: uppercase;
 }
 
-.sort-control-wrapper > label {
+.sort-control-wrapper > span {
     opacity: 0.6;
     padding-right: 30px;
 }
