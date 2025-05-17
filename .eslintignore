@@ -1,0 +1,6 @@
+dist/
+build/
+node_modules/
+e2e/
+**/*.spec.js
+/src/components/Counter.jsx
