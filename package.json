@@ -20,7 +20,10 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build"
+    "build-storybook": "storybook build",
+    "start-webpack": "BUILD_ENV=development webpack serve",
+    "build-prod-webpack": "BUILD_ENV=production webpack",
+    "build-dev-webpack": "BUILD_ENV=development webpack"
   },
   "eslintConfig": {
     "extends": [
@@ -42,6 +45,10 @@
     ]
   },
   "devDependencies": {
+    "@babel/cli": "^7.27.2",
+    "@babel/core": "^7.27.1",
+    "@babel/preset-env": "^7.27.2",
+    "@babel/preset-react": "^7.27.1",
     "@chromatic-com/storybook": "^3.2.6",
     "@storybook/addon-essentials": "^8.6.11",
     "@storybook/addon-interactions": "^8.6.11",
@@ -55,13 +62,25 @@
     "@testing-library/jest-dom": "^6.6.3",
     "@testing-library/react": "^16.2.0",
     "@testing-library/user-event": "^14.6.1",
+    "babel-loader": "^10.0.0",
+    "clean-webpack-plugin": "^4.0.0",
+    "copy-webpack-plugin": "^13.0.0",
+    "css-minimizer-webpack-plugin": "^7.0.2",
     "eslint": "^8.57.1",
+    "eslint-config-airbnb": "^19.0.4",
+    "eslint-plugin-import": "^2.31.0",
+    "eslint-plugin-jsx-a11y": "^6.10.2",
     "eslint-plugin-react": "^7.37.5",
-    "eslint-plugin-react-hooks": "^5.2.0",
+    "eslint-plugin-react-hooks": "^4.6.2",
     "eslint-plugin-storybook": "^0.12.0",
+    "html-webpack-plugin": "^5.6.3",
     "jest": "^27.5.1",
     "prop-types": "^15.8.1",
     "storybook": "^8.6.11",
-    "webpack": "^5.98.0"
+    "terser-webpack-plugin": "^5.3.14",
+    "webpack": "^5.99.8",
+    "webpack-bundle-analyzer": "^4.10.2",
+    "webpack-cli": "^6.0.1",
+    "webpack-dev-server": "^5.2.1"
   }
 }
