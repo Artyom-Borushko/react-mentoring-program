@@ -1,49 +1,49 @@
 import React from 'react';
-import { createBrowserRouter, RouterProvider } from "react-router";
+import { createBrowserRouter, RouterProvider } from 'react-router';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import Header from "./components/header/Header";
-import MovieDetails from "./components/movie-details/MovieDetails";
-import AddMovieForm from "./components/movie-form/add-movie-form/AddMovieForm";
-import {movieDetailsLoader} from "./loaders/movieLoader";
-import EditMovieForm from "./components/movie-form/edit-movie-form/EditMovieForm";
+import Header from './components/header/Header';
+import MovieDetails from './components/movie-details/MovieDetails';
+import AddMovieForm from './components/movie-form/add-movie-form/AddMovieForm';
+import movieDetailsLoader from './loaders/movieLoader';
+import EditMovieForm from './components/movie-form/edit-movie-form/EditMovieForm';
 
 const router = createBrowserRouter([
-    {
-        path: "/",
-        element: <App />,
-        errorElement: <p>Route Not Found</p>,
+  {
+    path: '/',
+    element: <App />,
+    errorElement: <p>Route Not Found</p>,
+    children: [
+      {
+        path: '/',
+        element: <Header />,
         children: [
-            {
-                path: "/",
-                element: <Header />,
-                children: [
-                    {
-                        path: "/new",
-                        element: <AddMovieForm />,
-                    },
-                    {
-                        path: "/:movieId/edit",
-                        element: <EditMovieForm />,
-                        loader: movieDetailsLoader,
-                    },
-                ]
-            },
-            {
-                path: "/:movieId",
-                element: <MovieDetails />,
-                loader: movieDetailsLoader,
-            },
+          {
+            path: '/new',
+            element: <AddMovieForm />,
+          },
+          {
+            path: '/:movieId/edit',
+            element: <EditMovieForm />,
+            loader: movieDetailsLoader,
+          },
         ],
-    },
+      },
+      {
+        path: '/:movieId',
+        element: <MovieDetails />,
+        loader: movieDetailsLoader,
+      },
+    ],
+  },
 ]);
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   // <React.StrictMode>
-    <RouterProvider router={router} />
+  <RouterProvider router={router} />,
   // </React.StrictMode>
 );
 

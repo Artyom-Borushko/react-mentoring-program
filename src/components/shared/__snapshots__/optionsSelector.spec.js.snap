@@ -7,6 +7,7 @@ exports[`OptionsSelector component tests renders OptionsSelector component with 
       alt="expand options"
       aria-label="expand options"
       class="movie-expand-options-icon "
+      role="button"
       src="images/options-selector/threeDotsExpandOptionsIcon.png"
     />
   </div>
@@ -20,6 +21,7 @@ exports[`OptionsSelector component tests renders OptionsSelector component with 
       alt="expand options"
       aria-label="expand options"
       class="movie-expand-options-icon "
+      role="button"
       src="images/icons/redTriangleDown.png"
     />
   </div>

@@ -1,18 +1,18 @@
 import MoviesCounter from '../components/movie-tile/MoviesCounter';
-import {listOfMoviesMock} from "../data/moviesListMock";
+import listOfMoviesMock from '../data/moviesListMock';
 
 export default {
-    component: MoviesCounter,
+  component: MoviesCounter,
 };
 
 export const DefaultNumberOfMovies = {
-    args: {
-        movies: listOfMoviesMock,
-    }
+  args: {
+    movies: listOfMoviesMock,
+  },
 };
 
 export const EmptyMoviesListPassed = {
-    args: {
-        movies: [],
-    }
+  args: {
+    movies: [],
+  },
 };
