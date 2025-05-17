@@ -23,7 +23,8 @@
     "build-storybook": "storybook build",
     "start-webpack": "BUILD_ENV=development webpack serve",
     "build-prod-webpack": "BUILD_ENV=production webpack",
-    "build-dev-webpack": "BUILD_ENV=development webpack"
+    "build-dev-webpack": "BUILD_ENV=development webpack",
+    "lint": "npx eslint ./"
   },
   "eslintConfig": {
     "extends": [
