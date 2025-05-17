@@ -24,7 +24,8 @@
     "start-webpack": "BUILD_ENV=development webpack serve",
     "build-prod-webpack": "BUILD_ENV=production webpack",
     "build-dev-webpack": "BUILD_ENV=development webpack",
-    "lint": "npx eslint ./"
+    "lint": "npx eslint ./",
+    "prepare": "husky"
   },
   "eslintConfig": {
     "extends": [
@@ -32,6 +33,9 @@
       "react-app/jest",
       "plugin:storybook/recommended"
     ]
+  },
+  "lint-staged": {
+    "*.{js,jsx}": "eslint"
   },
   "browserslist": {
     "production": [
@@ -75,7 +79,9 @@
     "eslint-plugin-react-hooks": "^4.6.2",
     "eslint-plugin-storybook": "^0.12.0",
     "html-webpack-plugin": "^5.6.3",
+    "husky": "^9.1.7",
     "jest": "^27.5.1",
+    "lint-staged": "^16.0.0",
     "prop-types": "^15.8.1",
     "storybook": "^8.6.11",
     "terser-webpack-plugin": "^5.3.14",
