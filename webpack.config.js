@@ -35,10 +35,17 @@ module.exports = () => ({
         test: /\.css$/,
         use: ['style-loader', 'css-loader'],
       },
+      {
+        test: /\.([cm]?ts|tsx)$/,
+        loader: 'ts-loader',
+      },
     ],
   },
   resolve: {
-    extensions: ['.js', '.jsx'],
+    extensions: ['.ts', '.tsx', '.js', '.jsx'],
+    extensionAlias: {
+      '.js': ['.js', '.ts'],
+    },
   },
   devtool: isDevelopment ? 'inline-source-map' : false,
   devServer: {

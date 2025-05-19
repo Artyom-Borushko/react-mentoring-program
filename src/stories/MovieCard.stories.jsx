@@ -1,5 +1,5 @@
 import { fn } from '@storybook/test';
-import { MovieCard } from '../components/movie-tile/movie-card/MovieCard';
+import { MovieCard } from '../components/movie-tile/movie-card/MovieCard.tsx';
 import listOfMoviesMock from '../data/moviesListMock';
 
 export default {
