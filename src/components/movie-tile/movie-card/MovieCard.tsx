@@ -4,7 +4,25 @@ import OptionsSelector from '../../shared/OptionsSelector';
 import { movieDropdownOptions } from '../../../data/dropdownsOptions';
 import { getMovieReleaseYear } from '../../../utilities/utilities';
 
-export const MovieCard = memo(({ movie, clickHandler, handleDropdownSelection }) => (
+interface Movie {
+    src?: string;
+    title: string;
+    release_date: string;
+    genres: string[];
+}
+
+interface ClickHandler {
+    (movie: Movie): void;
+}
+interface HandleDropdownSelection {
+    (event: React.SyntheticEvent, movie: Movie): void;
+}
+
+export const MovieCard = memo(({ movie, clickHandler, handleDropdownSelection }: {
+    movie: Movie,
+    clickHandler: ClickHandler,
+    handleDropdownSelection: HandleDropdownSelection
+}) => (
   <div className="movie-card">
     <OptionsSelector
       dropdownOptions={movieDropdownOptions}
