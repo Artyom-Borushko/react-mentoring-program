@@ -1,27 +1,26 @@
-import React from "react";
-import './genreSelect.css'
+import React from 'react';
+import './genreSelect.css';
 
-export default function GenreSelect({selectedGenre, listOfGenres, genreSelectHandler}) {
+export default function GenreSelect({ selectedGenre, listOfGenres, genreSelectHandler }) {
+  const clickHandler = (event) => {
+    event.preventDefault();
+    genreSelectHandler(event.target.name);
+  };
 
-    const clickHandler = (event) => {
-        event.preventDefault();
-        genreSelectHandler(event.target.name);
-    }
-
-    return (
-        <div className={'genre-selection-wrapper'}>
-            {listOfGenres.map((genre, index) => {
-                return (
-                    <button
-                        className={`genre-button ${selectedGenre === genre ? "selected" : ""}`}
-                        key={index}
-                        name={genre}
-                        onClick={clickHandler}
-                    >
-                        {genre}
-                    </button>
-                )
-            })}
-        </div>
-    );
+  return (
+    <div className="genre-selection-wrapper">
+      {listOfGenres.map((genre, index) => (
+        <button
+          type="button"
+          className={`genre-button ${selectedGenre === genre ? 'selected' : ''}`}
+          // eslint-disable-next-line react/no-array-index-key
+          key={index}
+          name={genre}
+          onClick={clickHandler}
+        >
+          {genre}
+        </button>
+      ))}
+    </div>
+  );
 }

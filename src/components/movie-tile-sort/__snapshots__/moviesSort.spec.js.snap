@@ -11,30 +11,35 @@ exports[`MoviesSort component tests renders MoviesSort component 1`] = `
       <button
         class="genre-button "
         name="all"
+        type="button"
       >
         all
       </button>
       <button
         class="genre-button "
         name="documentary"
+        type="button"
       >
         documentary
       </button>
       <button
         class="genre-button selected"
         name="comedy"
+        type="button"
       >
         comedy
       </button>
       <button
         class="genre-button "
         name="horror"
+        type="button"
       >
         horror
       </button>
       <button
         class="genre-button "
         name="crime"
+        type="button"
       >
         crime
       </button>
@@ -42,9 +47,9 @@ exports[`MoviesSort component tests renders MoviesSort component 1`] = `
     <div
       class="sort-control-wrapper"
     >
-      <label>
+      <span>
         Sort by
-      </label>
+      </span>
       <p>
         title
       </p>
@@ -53,6 +58,7 @@ exports[`MoviesSort component tests renders MoviesSort component 1`] = `
           alt="expand options"
           aria-label="expand options"
           class="movie-expand-options-icon movies-sort"
+          role="button"
           src="images/icons/redTriangleDown.png"
         />
       </div>
